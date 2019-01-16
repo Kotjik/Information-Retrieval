@@ -9,8 +9,8 @@
 }
 
 #progressbar>div {
-  background-color: orange;
-  width: 20%;
+  background-color: #0C9;
+  width: 50%;
   /* Adjust with JavaScript */
   height: 3px;
   border-radius: 10px;
