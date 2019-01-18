@@ -23,6 +23,10 @@ div.ex3 {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+div.ex3 {
+  align: center;
+  width: 100px;
+}
 
 .float{
 	/*position:fixed;
@@ -67,3 +71,35 @@ div.ex3 {
   height: 3px;
   border-radius: 10px;
 }
+
+* {
+   box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  #main {
+    display: flex;
+    min-height: calc(100vh - 40vh);
+  }
+  #main > article {
+    flex: 1;
+    background: #EAF1F7;
+  }
+  #main > nav,
+  #main > aside {
+    flex: 0 0 20vw;
+    background:#A6C4E0;
+  }
+  #main > nav {
+    order: -1;
+  }
+  header, footer, article, nav, aside {
+    padding: 1em;
+  }
+  header, footer {
+    background: #C7D9EF;
+    height: 20vh;
+    text-align: center;
+  }
