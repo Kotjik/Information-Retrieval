@@ -19,3 +19,8 @@ function printLink(elem){
     elem.parentNode.parentNode.id + " " + getFormattedDate()
   );
 }
+
+
+//
+
+console.log(__dirname);

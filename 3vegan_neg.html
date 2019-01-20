@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="res\css\floating_next_button.css">
     <link rel="stylesheet" type="text/css" href="res\css\likert.css">
     <link rel="stylesheet" type="text/css" href="res\css\progress_vegan.css">
+    <script type="text/javascript" src="res\js\logdata.js"></script>
 </head>
 
 <body>
@@ -37,7 +38,7 @@
         <div class="searchResults">
 
             <div>
-                <a href="3autonom_pos.html" class="float">
+                <a href="4autonom_neg.html" class="float">
                     <b>Weiter</b>
                 </a>
             </div>
@@ -49,17 +50,17 @@
 
             <ul>
 
-                <div class="searchResultsItem">
-                    <li><a href="#">With zero coding experience, artist building 180 webpages in 180 days</a></li>
+                <div id="link_pos_1"class="searchResultsItem">
+                    <li><a onClick="printLink(this)" href="#">With zero coding experience, artist building 180 webpages in 180 days</a></li>
                     <p class="resultAddr">arstechnica.com/.../with-zero-coding-experience-artist-building-180-web...</p>
                     <p><span>Jul 26, 2013 - </span>One of Jennifer Dewalt's creations, this webpage lets visitors create paintings in ... Build a different website every day for 180 consecutive days.</p>
                 </div>
 
-                <form action="">
+                <form id="likert_pos_1" action="">
                     <label class="statement">Dieses Suchergebnis ist glaubwürdig.</label>
                     <ul class='likert'>
                         <li>
-                            <input type="radio" name="likert" value="-3">
+                            <input onClick="printInfo(this, value)" type="radio" name="likert" value="-3">
                             <label>Stimme überhaupt nicht zu</label>
                         </li>
                         <li>

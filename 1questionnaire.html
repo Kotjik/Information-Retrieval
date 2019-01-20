@@ -17,7 +17,7 @@
     </header>
     <div id="main">
         <article>
-            <form action="https://docs.google.com/forms/d/e/1FAIpQLSewkQprvlbuCqPFFAYN1dS0tpLdTW692hkTNHcCNQmBzYNKYg/formResponse" target="_self" id="bootstrapForm" method="POST">
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSewkQprvlbuCqPFFAYN1dS0tpLdTW692hkTNHcCNQmBzYNKYg/formResponse" target="_blank" onsubmit="window.location.href = '2aufgabe.html';" id="bootstrapForm" method="POST">
                 <fieldset>
                     <h2>Confirmationbias &amp; Credibility Judgement<br><small>Erklärung, dass alles anonym ist.</small></h2>
                 </fieldset>
@@ -586,25 +586,25 @@
                     <div class="form-group">
                         <div>
                             <label class="radio-inline">
-                                <input type="radio" name="entry.382727117" value="1"> 1
+                                <input type="radio" name="entry.382727117" value="1" required> 1
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="entry.382727117" value="2"> 2
+                                <input type="radio" name="entry.382727117" value="2" required> 2
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="entry.382727117" value="3"> 3
+                                <input type="radio" name="entry.382727117" value="3" required> 3
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="entry.382727117" value="4"> 4
+                                <input type="radio" name="entry.382727117" value="4" required> 4
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="entry.382727117" value="5"> 5
+                                <input type="radio" name="entry.382727117" value="5" required> 5
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="entry.382727117" value="6"> 6
+                                <input type="radio" name="entry.382727117" value="6" required> 6
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="entry.382727117" value="7"> 7
+                                <input type="radio" name="entry.382727117" value="7" required> 7
                             </label>
                         </div>
                         <div>
@@ -624,8 +624,10 @@
     -->
                 <input type="hidden" name="pageHistory" value="0,1,2,3,4">
 
-                <input class="btn btn-primary" type="submit" value="Submit">
+                <input class="btn btn-primary" type="submit" value="Antworten einreichen">
             </form>
+
+            <!-- <a target="_blank" onClick="randomUrl();" class="btn btn-primary btn-lg active" role="button">Zum nächsten Teil</a> -->
 
         </article>
         <nav>Nav</nav>
