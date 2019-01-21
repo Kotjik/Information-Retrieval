@@ -16,6 +16,16 @@ function printInfo(elem, value){
 
 function printLink(elem){
   console.log(
-    elem.parentNode.parentNode.id + " " + getFormattedDate()
+    elem.parentNode.parentNode.id + ", " + getFormattedDate()
   );
+}
+
+
+
+function writeLikertToLog(elem, value){
+  document.getElementById("689994586").innerHTML += elem.parentNode.parentNode.parentNode.id + ", " + value + ", " + getFormattedDate(); + "\n"
+}
+
+function writeLinkToLog(elem){
+  document.getElementById("689994586").innerHTML += elem.parentNode.parentNode.id + ", " + getFormattedDate() + "\n";
 }
