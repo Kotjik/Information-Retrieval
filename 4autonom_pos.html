@@ -3,9 +3,56 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="res\css\serp.css">
-    <link rel="stylesheet" type="text/css" href="res\css\floating_next_button.css">
     <link rel="stylesheet" type="text/css" href="res\css\likert.css">
-    <link rel="stylesheet" type="text/css" href="res\css\progress_autonom.css">
+
+
+    <style>
+
+    /* -------------Progressbar -------------*/
+    #progressbar {
+      position:fixed;
+      width:245px;
+      right:198px;
+      background-color: black;
+      border-radius: 13px;
+      /* (height of inner div) / 2 + padding */
+      padding: 3px;
+    }
+
+    #progressbar>div {
+      background-color: #0C9;
+      width: 50%;
+      /* Adjust with JavaScript */
+      height: 3px;
+      border-radius: 10px;
+    }
+
+
+    /* ------------Floating Next Button */
+    .float{
+    	position:fixed;
+    	width:250px;
+    	height:45px;
+      margin-top: 15px;
+    	right:200px;
+    	background-color:#0C9;
+    	color:#FFF;
+    	border-radius:20px;
+    	text-align:center;
+      text-decoration: none;
+      font-size: 30px;
+      padding-top: 10px;
+    	box-shadow: 2px 2px 3px #999;
+
+    }
+
+
+    .my-float{
+    	margin-top:22px;
+    }
+    </style>
+
+
 </head>
 
 <body>

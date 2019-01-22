@@ -1,0 +1,90 @@
+<!DICTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="res\css\index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha256-2Pjr1OlpZMY6qesJM68t2v39t+lMLvxwpa8QlRjJroA=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        // This script requires jQuery and jquery-form plugin
+
+        // $('#bootstrapForm').submit(function(event) {
+        //     event.preventDefault()
+        //     var extraData = {}
+        //     $('#bootstrapForm').ajaxSubmit({
+        //         data: extraData,
+        //         dataType: 'jsonp', // This won't really work. It's just to use a GET instead of a POST to allow cookies from different domain.
+        //         error: function() {
+        //             // Submit of form should be successful but JSONP callback will fail because Google Forms
+        //             // does not support it, so this is handled as a failure.
+        //             alert('Form Submitted. Thanks.')
+        //                 // You can also redirect the user to a custom thank-you page:
+        //                 // window.location = 'http://www.mydomain.com/thankyoupage.html'
+        //         }
+        //     })
+        // })
+        function stopDefAction(evt) {
+          evt.preventDefault();
+        }
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Bestätigungsfehler und Glaubwürdigkeit bei der Websuche</h1>
+        <h2>Eine Online-Studie</h2>
+    </header>
+    <div id="main">
+        <article>
+            <div id="id" class="searchResultsItem">
+                <li><a onClick="myLogger('test')" href="#">I'm learning to code by building 180 websites in 180 ... - Jennifer Dewalt</a></li>
+                <p class="resultAddr">blog.jenniferdewalt.com/post/.../im-learning-to-code-by-building-180-websites-in</p>
+                <p><span>Jul 24, 2013 - </span>Build a different website every day for 180 consecutive days. Every website must be accompanied by a blog post. Any code I write must be ...</p>
+            </div>
+
+            <div style="display: none;">
+            <iframe name="google">
+              <p>Your browser does not support iframes.</p>
+            </iframe>
+            </div>
+
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSct62WRoVkTFTcfwWkqsUOwm328Uq4A-NFEDNOkaUXju1soZw/formResponse" target="google" onsubmit="window.location.href = '7thankyou.html';" id="bootstrapForm" method="POST">
+                <fieldset>
+                    <h2>Unbenanntes Formular<br><small></small></h2>
+                </fieldset>
+
+                <!-- Field type: "paragraph" id: "131372549" -->
+                <fieldset>
+                    <legend for="131372549">Antwort:</legend>
+                    <div class="form-group">
+                        <textarea id="1468137294" name="entry.1468137294" class="form-control"></textarea>
+                    </div>
+                </fieldset>
+
+                <input type="hidden" name="fvv" value="1">
+                <input type="hidden" name="fbzx" value="-2516242131147506111">
+                <!--
+        CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
+        This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
+        Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
+        We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
+    -->
+                <input type="hidden" name="pageHistory" value="0">
+
+                <input class="btn btn-primary" type="submit" value="Submit">
+            </form>
+            <a id="thankyoulink" onClick="stopDefAction(evt)" href="7thankyou.html" class="btn btn-primary btn-lg active" role="button">Umfrage starten</a>
+
+        </article>
+        <nav>Nav</nav>
+        <aside>Aside</aside>
+    </div>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
