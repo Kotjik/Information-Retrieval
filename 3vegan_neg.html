@@ -5,52 +5,78 @@
 
     <link rel="stylesheet" type="text/css" href="res\css\serp.css">
     <link rel="stylesheet" type="text/css" href="res\css\likert.css">
-    <script type="text/javascript" src="res\js\logdata_vegan.js"></script>
+
+    <script>
+        function getFormattedDate() {
+            var date = new Date();
+            var str = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+            // + ":" + date.getMilliseconds();
+
+            return str;
+        }
+
+        function printInfo(elem, value) {
+            console.log(
+                elem.parentNode.parentNode.parentNode.id + ", " + value + ", " + getFormattedDate()
+            );
+        }
+
+        function printLink(elem) {
+            console.log(
+                elem.parentNode.parentNode.id + ", " + getFormattedDate()
+            );
+        }
+
+        function writeLikertToLog(elem, value) {
+            document.getElementById("689994586").innerHTML += elem.parentNode.parentNode.parentNode.id + ", " + value + ", " + getFormattedDate() + "\n";
+        }
+
+        function writeLinkToLog(elem) {
+            document.getElementById("689994586").innerHTML += elem.parentNode.parentNode.id + ", " + getFormattedDate() + "\n";
+        }
+    </script>
 
     <style>
+        /* -------------Progressbar -------------*/
 
-    /* -------------Progressbar -------------*/
-    #progressbar {
-      position:fixed;
-    	width:245px;
-    	right:198px;
-      background-color: black;
-      border-radius: 13px;
-      /* (height of inner div) / 2 + padding */
-      padding: 3px;
-    }
+        #progressbar {
+            position: fixed;
+            width: 245px;
+            right: 198px;
+            background-color: black;
+            border-radius: 13px;
+            /* (height of inner div) / 2 + padding */
+            padding: 3px;
+        }
 
-    #progressbar>div {
-      background-color: #0C9;
-      width: 25%;
-      /* Adjust with JavaScript */
-      height: 3px;
-      border-radius: 10px;
-    }
+        #progressbar>div {
+            background-color: #0C9;
+            width: 25%;
+            /* Adjust with JavaScript */
+            height: 3px;
+            border-radius: 10px;
+        }
+        /* ------------Floating Next Button -------------- */
 
-    /* ------------Floating Next Button -------------- */
-    .float{
-    	position:fixed;
-    	width:250px;
-    	height:45px;
-      margin-top: 15px;
-    	right:200px;
-    	background-color:#0C9;
-    	color:#FFF;
-    	border-radius:20px;
-    	text-align:center;
-      text-decoration: none;
-      font-size: 30px;
-      padding-top: 10px;
-    	box-shadow: 2px 2px 3px #999;
+        .float {
+            position: fixed;
+            width: 250px;
+            height: 45px;
+            margin-top: 15px;
+            right: 200px;
+            background-color: #0C9;
+            color: #FFF;
+            border-radius: 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 30px;
+            padding-top: 10px;
+            box-shadow: 2px 2px 3px #999;
+        }
 
-    }
-
-    .my-float{
-    	margin-top:22px;
-    }
-
-
+        .my-float {
+            margin-top: 22px;
+        }
     </style>
 
 </head>
@@ -82,20 +108,19 @@
         </div>
 
         <form action="https://docs.google.com/forms/d/e/1FAIpQLSdldSmqRz7IBPg7EtLuLa7Z6wjEJosJsuNUeW5YH7FSRo0U1A/formResponse" target="_blank" id="bootstrapForm" method="POST">
-          <div style="display: none;">
-            <fieldset>
-                <h2>2_Vegan_Log<br><small></small></h2>
-            </fieldset>
+            <div style="display: none;">
+                <fieldset>
+                    <h2>2_Vegan_Log<br><small></small></h2>
+                </fieldset>
 
-
-            <!-- Field type: "paragraph" id: "1656936436" -->
-            <fieldset>
-                <legend for="1656936436">vegan_data</legend>
-                <div class="form-group">
-                    <textarea id="689994586" name="entry.689994586" class="form-control"></textarea>
-                </div>
-            </fieldset>
-          </div>
+                <!-- Field type: "paragraph" id: "1656936436" -->
+                <fieldset>
+                    <legend for="1656936436">vegan_data</legend>
+                    <div class="form-group">
+                        <textarea id="689994586" name="entry.689994586" class="form-control"></textarea>
+                    </div>
+                </fieldset>
+            </div>
 
             <input type="hidden" name="fvv" value="1">
             <input type="hidden" name="fbzx" value="5845992643651865219">
@@ -109,7 +134,6 @@
 
             <input class="btn btn-primary" type="submit" value="Submit">
         </form>
-
 
         <div class="searchResults">
 
@@ -165,7 +189,6 @@
                         </li>
                     </ul>
                 </form>
-
 
                 <div id="link_vegan_pos_1" class="searchResultsItem">
                     <li><a onClick="printLink(this)" href="#">I'm learning to code by building 180 websites in 180 ... - Jennifer Dewalt</a></li>
@@ -247,13 +270,13 @@
                     </ul>
                 </form>
 
-                <div id="link_vegan_pos_2"class="searchResultsItem">
+                <div id="link_vegan_pos_2" class="searchResultsItem">
                     <li><a onClick="printLink(this)" href="#">Watch this webpage code itself. : InternetIsBeautiful - Reddit</a></li>
                     <p class="resultAddr">https://www.reddit.com/r/InternetIsBeautiful/.../watch_this_webpage_code_itself/</p>
                     <p><span>Apr 1, 2015 - </span>Medal of BeautyWatch this webpage code itself. (codepen.io). submitted 1 year ago by fyrie · 58 comments; share. loading... all 58 comments.</p>
                 </div>
 
-                <form id="likert_vegan_pos_2"action="">
+                <form id="likert_vegan_pos_2" action="">
                     <label class="statement">Dieses Suchergebnis ist glaubwürdig.</label>
                     <ul class='likert'>
                         <li>
@@ -528,8 +551,6 @@
                     </ul>
                 </form>
             </ul>
-
-
 
             <!-- <div class="relatedSearches">
                 <h4>Searches related to build this webpage</h4>

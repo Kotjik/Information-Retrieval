@@ -6,8 +6,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha256-2Pjr1OlpZMY6qesJM68t2v39t+lMLvxwpa8QlRjJroA=" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="res\css\questionnaire.css">
-    <script type="text/javascript" src="res\js\questionnaire.js"></script>
-    <script type="text/javascript" src="res\php\questionnaire.php"></script>
+
+    <script>
+        var urlArray = [
+            "2vegan_neg.html",
+            "2vegan_pos.html"
+        ];
+
+        function randomUrl() {
+            var randomNumber = Math.floor(Math.random() * urlArray.length);
+            var newUrl = urlArray[randomNumber];
+            window.location.href = newUrl;
+        }
+    </script>
+
 </head>
 
 <body>
@@ -929,10 +941,6 @@
                 <input class="btn btn-primary btn-lg active" type="submit" value="Zum nächsten Teil">
             </form>
             <a href="2aufgabe.html" class="btn btn-primary btn-lg active" role="button">Umfrage Überspringen</a>
-
-            <!-- <form action="https://docs.google.com/forms/d/e/1FAIpQLSewkQprvlbuCqPFFAYN1dS0tpLdTW692hkTNHcCNQmBzYNKYg/formResponse" target="_blank" onsubmit="window.location.href = '2aufgabe.html';" id="bootstrapForm" method="POST"> -->
-            <!-- <input class="btn btn-primary" type="submit" value="Antworten einreichen"> -->
-            <!-- <a target="_blank" onClick="randomUrl();" class="btn btn-primary btn-lg active" role="button">Zum nächsten Teil</a> -->
 
         </article>
         <nav>Nav</nav>
