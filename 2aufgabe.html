@@ -1,51 +1,107 @@
 <!DICTYPE html>
+
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="res\css\index.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous">
 
-    <script>
-      var urlArray = [
-          "3vegan_neg.html",
-          "3vegan_pos.html"
-      ];
+    <style>
+        /*---------------------------------
+      new minimalistic design
+      ----------------------------------*/
 
-      function randomUrl() {
-          var randomNumber = Math.floor(Math.random() * urlArray.length);
-          var newUrl = urlArray[randomNumber];
-          window.location.href = newUrl;
-      }
-      </script>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #main {
+            display: flex;
+            min-height: calc(100vh - 40vh);
+        }
+
+        #main > article {
+            font-size: 20px;
+            flex: 1;
+            background: #EAF1F7;
+            align: middle;
+        }
+
+        #main > nav,
+        #main > aside {
+            flex: 0 0 20vw;
+            background: #A6C4E0;
+        }
+
+        #main > nav {
+            order: -1;
+        }
+
+        header,
+        footer,
+        article,
+        nav,
+        aside {
+            padding: 1em;
+        }
+
+        header {
+            background: #C7D9EF;
+            height: 20vh;
+            text-align: center;
+        }
+
+        footer {
+            background: #A6C4E0;
+            height: 20vh;
+            text-align: center;
+        }
+    </style>
+    <script>
+        var urlArray = [
+            "3vegan_neg.html",
+            "3vegan_pos.html"
+        ];
+
+        function randomUrl() {
+            var randomNumber = Math.floor(Math.random() * urlArray.length);
+            var newUrl = urlArray[randomNumber];
+            window.location.href = newUrl;
+        }
+    </script>
 </head>
 
 <body>
-  <header>
-    <h1>Bestätigungsfehler und Glaubwürdigkeit bei der Websuche</h1>
-    <h2>Eine Online-Studie</h2>
-  </header>
-  <div id="main">
-    <article>
-      <p style="text-align: justify;">Danke für die Beantwortung der Umfrage! Es folgt nun der zweite Teil der Online-Studie.</p>
-      <p style="text-align: justify;">Stellen Sie sich folgendes Szenario vor:</p>
-      <p style="text-align: justify;">
-        Sie haben sich mit verschiedenen Freunden über die Themen <b>Veganismus</b>, <b>Autonomes Fahren</b> und <b>Cannabis Legalisierung</b> unterhalten.
-        Sie fanden die Themen interessant und wollen sich zu Hause kurz über diese Themen informieren.
-        Sie sitzen im Bett oder am Schreibtisch und geben jweils in die Google-Suchleiste die respektiven Suchbegriffe "Veganismus", "Autonomes Fahren" und "Cannabis Lealisierung" ein.
-      </p>
-      <p style="text-align: justify;">
-        Klicken Sie auf den unten stehenden Button, um auf die erste Suche zuzugreifen.
-        Verhalten Sie sich so, wie Sie es immer tun, wenn Sie sich <i>kurz</i> ein paar Infos aus dem Netz holen möchten.
-      </p>
+    <header>
+        <h1><br>Bestätigungsfehler und Glaubwürdigkeit bei der Websuche</h1>
+    </header>
+    <div id="main">
+        <article>
+            <p style="text-align: justify;">Danke für die Beantwortung der Umfrage! Es folgt nun der zweite Teil der Online-Studie.</p>
+            <p style="text-align: justify;">Stellen Sie sich folgendes Szenario vor:</p>
+            <p style="text-align: justify;">
+                Sie haben sich mit verschiedenen Freunden über die Themen <b>Veganismus</b>, <b>Autonomes Fahren</b> und <b>Cannabis Legalisierung</b> unterhalten. Sie fanden die Themen interessant und wollen sich zu Hause kurz über diese Themen informieren. Sie sitzen im Bett oder am Schreibtisch und geben jeweils in die Google-Suchleiste die respektiven Suchbegriffe "Veganismus", "Autonomes Fahren" und "Cannabis Lealisierung" ein.
+            </p>
+            <p style="text-align: justify;">Auf der Suchergebnisseite befinden sich unter den einzelnen Ergebnissen eine Skala, mit der Sie die Glaubwürdikeit des Ergebnisses bewerten können.</p>
+            <p style="text-align: justify;">
+                Sie können auch auf die Suchergebnis-Links klicken, wodurch sich ein neues Fenster mit dem dazugehörigen Artikel öffnet. <b>Die Suchergebnissseite bleibt im alten Fenster offen</b>. Sind Sie mit dem Artikel fertig, <b>kehren Sie bitte auf die Suchergebnisseite zurück</b>.
+            </p>
+            <p style="text-align: justify;">
+                Klicken Sie auf den unten stehenden Button, um auf die erste Suche zuzugreifen. Sie müssen nicht jedes Suchergebnis bewerten oder anschauen, können es aber natürlich.
+            </p>
+            <p style="text-align: justify;">Verhalten Sie sich so, wie Sie es immer tun, wenn Sie sich <i>kurz</i> ein paar Infos aus dem Netz holen möchten. </p>
 
+            <a href="#" onClick="randomUrl();" class="btn btn-primary btn-lg active" role="button">Zur Suche</a>
+        </article>
+        <nav></nav>
+        <aside></aside>
+    </div>
+    <footer>
 
-      <a href="#" onClick="randomUrl();" class="btn btn-primary btn-lg active" role="button">Zur Suche</a>
-    </article>
-    <nav>Nav</nav>
-    <aside>Aside</aside>
-  </div>
-  <footer>
-
-  </footer>
+    </footer>
 </body>
 
 </html>

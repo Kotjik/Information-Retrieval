@@ -5,50 +5,101 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha256-2Pjr1OlpZMY6qesJM68t2v39t+lMLvxwpa8QlRjJroA=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="res\css\questionnaire.css">
 
+    <style>
+        /*---------------------------------
+      new minimalistic design
+      ----------------------------------*/
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #main {
+            display: flex;
+            min-height: calc(100vh - 40vh);
+        }
+
+        #main > article {
+            flex: 1;
+            background: #EAF1F7;
+            align: middle;
+        }
+
+        #main > nav,
+        #main > aside {
+            flex: 0 0 20vw;
+            background: #A6C4E0;
+        }
+
+        #main > nav {
+            order: -1;
+        }
+
+        header,
+        footer,
+        article,
+        nav,
+        aside {
+            padding: 1em;
+        }
+
+        header {
+            background: #C7D9EF;
+            height: 20vh;
+            text-align: center;
+        }
+        
+        footer {
+            background: #A6C4E0;
+            height: 20vh;
+            text-align: center;
+        }
+    </style>
     <script>
-        var urlArray = [
-            "2vegan_neg.html",
-            "2vegan_pos.html"
-        ];
-
-        function randomUrl() {
-            var randomNumber = Math.floor(Math.random() * urlArray.length);
-            var newUrl = urlArray[randomNumber];
-            window.location.href = newUrl;
+        // IP-Adresse
+        function getIP() {
+            $.getJSON('http://ip.jsontest.com/?callback=?', function(data) {
+                var ip_json = JSON.stringify(data, null, 2);
+                var ip_object = JSON.parse(ip_json);
+                document.getElementById("1938158283").innerHTML = ip_object.ip;
+                // console.log(ip_object.ip);
+            });
+        }
+        window.onload = function() {
+            getIP();
         }
     </script>
-
 </head>
 
 <body>
     <header>
-        <h1>Bestätigungsfehler und Glaubwürdigkeit bei der Websuche</h1>
-        <h2>Umfrage</h2>
+        <h1><br>Bestätigungsfehler und Glaubwürdigkeit bei der Websuche</h1>
     </header>
     <div id="main">
         <article>
-            <form action="https://docs.google.com/forms/d/e/1FAIpQLSewkQprvlbuCqPFFAYN1dS0tpLdTW692hkTNHcCNQmBzYNKYg/formResponse" target="_blank" onsubmit="window.location.href = '2aufgabe.html';" id="bootstrapForm" method="POST">
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSewkQprvlbuCqPFFAYN1dS0tpLdTW692hkTNHcCNQmBzYNKYg/formResponse" target="formpopup" onsubmit="window.location.href = '2aufgabe.html';" id="bootstrapForm" method="POST">
                 <fieldset>
-                    <h2>Confirmationbias &amp; Credibility Judgement<br><small></small></h2>
+                    <h2>Erstumfrage<br><small>Bitte geben Sie zu jeder Frage eine Antwort.</small></h2>
                 </fieldset>
 
-                <!-- Field type: "short" id: "2125742058" -->
-                <fieldset>
-                    <legend for="2125742058">Vorname:</legend>
-                    <div class="form-group">
-                        <input id="1619365447" type="text" name="entry.1619365447" class="form-control" required>
-                    </div>
-                </fieldset>
+                <div style="display: none;">
+                  <iframe name="formpopup">
 
-                <!-- Field type: "short" id: "214573416" -->
-                <fieldset>
-                    <legend for="214573416">Nachname:</legend>
-                    <div class="form-group">
-                        <input id="1470621458" type="text" name="entry.1470621458" class="form-control" required>
-                    </div>
-                </fieldset>
+                  </iframe>
+                  <!-- Field type: "paragraph" id: "214141110" -->
+                  <fieldset>
+                      <legend for="214141110">IP-Adresse</legend>
+                      <div class="form-group">
+                          <textarea id="1938158283" name="entry.1938158283" class="form-control"></textarea>
+                      </div>
+                  </fieldset>
+                </div>
 
                 <!-- Field type: "short" id: "181000693" -->
                 <fieldset>
@@ -92,7 +143,7 @@
                 <fieldset>
                     <legend for="1902217540">Veganismus</legend>
                     <div class="form-group">
-                        <p class="help-block">Veganismus ist eine aus dem Vegetarismus hervorgegangene Einstellung sowie Lebens- und Ernährungsweise. Vegan lebende Menschen meiden entweder zumindest alle Nahrungsmittel tierischen Ursprungs oder aber die Nutzung von Tieren und tierischen Produkten insgesamt</p>
+                        <p class="help-block">Veganismus ist eine aus dem Vegetarismus hervorgegangene Einstellung sowie Lebens- und Ernährungsweise. Vegan lebende Menschen meiden entweder zumindest alle Nahrungsmittel tierischen Ursprungs oder aber die Nutzung von Tieren und tierischen Produkten insgesamt.</p>
                     </div>
                 </fieldset>
 
@@ -372,7 +423,7 @@
                 <fieldset>
                     <legend for="1915666764">Autonomes Fahren</legend>
                     <div class="form-group">
-                        <p class="help-block">Unter autonomem Fahren (manchmal auch automatisches Fahren, automatisiertes Fahren oder pilotiertes Fahren genannt) ist die Fortbewegung von Fahrzeugen, mobilen Robotern und fahrerlosen Transportsystemen zu verstehen, die sich weitgehend autonom verhalten</p>
+                        <p class="help-block">Unter autonomem Fahren (manchmal auch automatisches Fahren, automatisiertes Fahren oder pilotiertes Fahren genannt) ist die Fortbewegung von Fahrzeugen, mobilen Robotern und fahrerlosen Transportsystemen zu verstehen, die sich weitgehend autonom verhalten.</p>
                     </div>
                 </fieldset>
 
@@ -652,7 +703,7 @@
                 <fieldset>
                     <legend for="334769475">Cannabis Legalisierung</legend>
                     <div class="form-group">
-                        <p class="help-block">Werden Pflanzenteile der weiblichen Hanfpflanze (meist Cannabis sativa, Cannabis indica oder deren Kreuzungen) so konsumiert, dass sie eine berauschende Wirkung hervorrufen, wird Cannabis als Rauschmittel verwendet. Die Legalisierung des Konsums, des Besitzes, der Produktion und der Weitergabe von illegalen Drogen ist ein viel diskutiertes Thema in der Drogenpolitik</p>
+                        <p class="help-block">Werden Pflanzenteile der weiblichen Hanfpflanze (meist Cannabis sativa, Cannabis indica oder deren Kreuzungen) so konsumiert, dass sie eine berauschende Wirkung hervorrufen, wird Cannabis als Rauschmittel verwendet. Die Legalisierung des Konsums, des Besitzes, der Produktion und der Weitergabe von illegalen Drogen ist ein viel diskutiertes Thema in der Drogenpolitik.</p>
                     </div>
                 </fieldset>
 
@@ -929,26 +980,22 @@
                 </fieldset>
 
                 <input type="hidden" name="fvv" value="1">
-                <input type="hidden" name="fbzx" value="678037687470643309">
+                <input type="hidden" name="fbzx" value="-5451585216167219295">
                 <!--
-        CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
-        This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
-        Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
-        We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
-    -->
+      CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
+      This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
+      Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
+      We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
+  -->
                 <input type="hidden" name="pageHistory" value="0,1,2,3">
 
-                <input class="btn btn-primary btn-lg active" type="submit" value="Zum nächsten Teil">
+                <input class="btn btn-primary" type="submit" value="Weiter">
             </form>
-            <a href="2aufgabe.html" class="btn btn-primary btn-lg active" role="button">Umfrage Überspringen</a>
-
-        </article>
-        <nav>Nav</nav>
-        <aside>Aside</aside>
+            <a href="2aufgabe.html" class="btn btn-primary btn-lg active" role="button">Umfrage Überspringen</a> </article>
+        <nav></nav>
+        <aside></aside>
     </div>
-    <footer>
-
-    </footer>
+    <footer> </footer>
 </body>
 
 </html>

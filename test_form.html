@@ -9,19 +9,49 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha256-2Pjr1OlpZMY6qesJM68t2v39t+lMLvxwpa8QlRjJroA=" crossorigin="anonymous"></script>
 
     <script>
-        // IP-Adresse
-        function getIP(){
-        $.getJSON('http://ip.jsontest.com/?callback=?', function(data) {
-            var ip_json = JSON.stringify(data, null, 2);
-            var ip_object = JSON.parse(ip_json);
-            document.getElementById("1893630996").innerHTML = ip_object.ip;
-            console.log(ip_object.ip);
-        });
-      }
-      window.onload = function() {
-        getIP();
-      }
+        // Altes Script für 3vegan_neg.html
+        // function getFormattedDate() {
+        //     var date = new Date();
+        //     var str = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+        //     // + ":" + date.getMilliseconds();
+        //
+        //     return str;
+        // }
+        //
+        // function printInfo(elem, value) {
+        //     console.log(
+        //         elem.parentNode.parentNode.parentNode.id + ", " + value + ", " + getFormattedDate()
+        //     );
+        // }
+        //
+        // function printLink(elem) {
+        //     console.log(
+        //         elem.parentNode.parentNode.id + ", " + getFormattedDate()
+        //     );
+        // }
+        //
+        // function writeLikertToLog(elem, value) {
+        //     document.getElementById("689994586").innerHTML += elem.parentNode.parentNode.parentNode.id + ", " + value + ", " + getFormattedDate() + "\n";
+        // }
+        //
+        // function writeLinkToLog(elem) {
+        //     document.getElementById("689994586").innerHTML += elem.parentNode.parentNode.id + ", " + getFormattedDate() + "\n";
+        // }
+    </script>
+    <script>
 
+        // IP-Adresse
+        function getIP() {
+            $.getJSON('http://ip.jsontest.com/?callback=?', function(data) {
+                var ip_json = JSON.stringify(data, null, 2);
+                var ip_object = JSON.parse(ip_json);
+                document.getElementById("1893630996").innerHTML = ip_object.ip;
+                // console.log(ip_object.ip);
+            });
+        }
+        window.onload = function() {
+            getIP();
+        }
 
         function getFormattedDate() {
             var date = new Date();
@@ -53,7 +83,7 @@
         <h1>Bestätigungsfehler und Glaubwürdigkeit bei der Websuche</h1>
         <h2>Eine Online-Studie</h2>
     </header>
-    <div onload="getIP()" id="main">
+    <div id="main">
         <article>
             <div id="id" class="searchResultsItem">
                 <li><a onClick="myLogger('test')" href="#">I'm learning to code by building 180 websites in 180 ... - Jennifer Dewalt</a></li>
@@ -133,8 +163,8 @@
                 <input class="btn btn-primary" type="submit" value="Submit">
             </form>
         </article>
-        <nav>Nav</nav>
-        <aside>Aside</aside>
+        <nav></nav>
+        <aside></aside>
     </div>
     <footer>
 

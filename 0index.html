@@ -2,25 +2,84 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="res\css\index.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous">
 
+    <style>
+        /*---------------------------------
+      new minimalistic design
+      ----------------------------------*/
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .questionnaire {
+            align: center;
+        }
+
+        #main {
+            display: flex;
+            min-height: calc(100vh - 40vh);
+        }
+
+        #main > article {
+            font-size: 20px;
+            flex: 1;
+            background: #EAF1F7;
+            align: middle;
+        }
+
+        #main > nav,
+        #main > aside {
+            flex: 0 0 20vw;
+            background: #A6C4E0;
+        }
+
+        #main > nav {
+            order: -1;
+        }
+
+        header,
+        footer,
+        article,
+        nav,
+        aside {
+            padding: 1em;
+        }
+
+        header {
+            background: #C7D9EF;
+            height: 20vh;
+            text-align: center;
+        }
+
+        footer {
+            background: #A6C4E0;
+            height: 20vh;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
     <header>
-        <h1>Bestätigungsfehler und Glaubwürdigkeit bei der Websuche</h1>
-        <h2>Eine Online-Studie</h2>
+        <h1><br>Bestätigungsfehler und Glaubwürdigkeit bei der Websuche</h1>
+
     </header>
     <div id="main">
         <article>
-            <p style="text-align: justify;">Vielen Dank, dass Sie bei dieser Online-Studie mitmachen! Sie geschieht im Rahmen des Seminares "Forschungspraxis des Information Retrievals" der Universit&auml;t Regensburg. Alle erhobenen Daten werden vertraut behandelt und nur zu Forschungszwecken verwendet. Namen oder pers&ouml;nliche Daten werden nicht ver&ouml;ffentlicht.</p>
-            <p style="text-align: justify;">Die Studie besteht aus einer Umfrage und aus drei simulierten Onlinesuchen. Es wird insgesamt ca. 10 - 15 Minuten dauern, wobei es nat&uuml;rlich von der Person abh&auml;ngt und k&uuml;rzer dauern kann.</p>
+            <p style="text-align: justify;">Vielen Dank, dass Sie bei dieser Online-Studie mitmachen!</p>
+            <p style="text-align: justify;">Im Rahmen eines Forschungsprojekts in der Informationswissenschaft an der Universität Regensburg führen wir eine Studie zu der Glaubwürdigkeit bei der Websuche durch.</p>
+            <p style="text-align: justify;">Wir freuen uns, dass Sie uns dabei helfen. Die Studie wird etwa 10 bis 15 Minuten dauern und bestet aus einer Umfrage und drei simulierten Onlinesuchen. Alle eingegebenen Daten dienen lediglich Forschungszwecken und werden anonym behandelt. Bei Fragen können Sie eine Mail an konstantin.kulik@stud.uni-regensburg.de senden.</p>
 
             <a href="1questionnaire.html" class="btn btn-primary btn-lg active" role="button">Umfrage starten</a>
         </article>
-        <nav>Nav</nav>
-        <aside>Aside</aside>
+        <nav></nav>
+        <aside></aside>
     </div>
     <footer>
 
