@@ -8,6 +8,65 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha256-2Pjr1OlpZMY6qesJM68t2v39t+lMLvxwpa8QlRjJroA=" crossorigin="anonymous"></script>
 
+    <style>
+        /*---------------------------------
+    new minimalistic design
+    ----------------------------------*/
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .questionnaire {
+            align: center;
+        }
+
+        #main {
+            display: flex;
+            min-height: calc(100vh - 40vh);
+        }
+
+        #main > article {
+            flex: 1;
+            background: #EAF1F7;
+            align: middle;
+        }
+
+        #main > nav,
+        #main > aside {
+            flex: 0 0 20vw;
+            background: #A6C4E0;
+        }
+
+        #main > nav {
+            order: -1;
+        }
+
+        header,
+        footer,
+        article,
+        nav,
+        aside {
+            padding: 1em;
+        }
+
+        header {
+            background: #C7D9EF;
+            height: 20vh;
+            text-align: center;
+        }
+
+        footer {
+            background: #A6C4E0;
+            height: 20vh;
+            text-align: center;
+        }
+    </style>
     <script>
         // Altes Script für 3vegan_neg.html
         // function getFormattedDate() {
@@ -38,15 +97,15 @@
         //     document.getElementById("689994586").innerHTML += elem.parentNode.parentNode.id + ", " + getFormattedDate() + "\n";
         // }
     </script>
-    <script>
 
+    <script type="text/javascript">
         // IP-Adresse
         function getIP() {
             $.getJSON('http://ip.jsontest.com/?callback=?', function(data) {
                 var ip_json = JSON.stringify(data, null, 2);
                 var ip_object = JSON.parse(ip_json);
                 document.getElementById("1893630996").innerHTML = ip_object.ip;
-                // console.log(ip_object.ip);
+                console.log(ip_object.ip);
             });
         }
         window.onload = function() {
@@ -68,13 +127,20 @@
         }
 
         function writeLikertToLog(elem, value) {
-            document.getElementById("1468137294").innerHTML += elem.parentNode.parentNode.id + ", " + value + ", " + getFormattedDate() + "\n";
+            document.getElementById("1468137294").innerHTML += elem.parentNode.parentNode.parentNode.id + ", " + value + ", " + getFormattedDate() + "\n";
         }
 
         function writeLinkToLog(elem) {
-            document.getElementById("...").innerHTML += elem.parentNode.parentNode.id + ", " + getFormattedDate() + "\n";
+            document.getElementById("1468137294").innerHTML += elem.parentNode.parentNode.id + ", " + getFormattedDate() + "\n";
         }
+
+        $.getJSON('getip.php', function(data){
+    alert('Your ip is: ' +  data.ip);
+  });
+
     </script>
+
+
 
 </head>
 
@@ -82,23 +148,27 @@
     <header>
         <h1>Bestätigungsfehler und Glaubwürdigkeit bei der Websuche</h1>
         <h2>Eine Online-Studie</h2>
+
     </header>
     <div id="main">
         <article>
-            <div id="id" class="searchResultsItem">
-                <li><a onClick="myLogger('test')" href="#">I'm learning to code by building 180 websites in 180 ... - Jennifer Dewalt</a></li>
+            <div id="link_test_id" class="searchResultsItem">
+                <li><a onClick="writeLinkToLog(this)" target="formpopup" href="http://example.com/">I'm learning to code by building 180 websites in 180 ... - Jennifer Dewalt</a></li>
                 <p class="resultAddr">blog.jenniferdewalt.com/post/.../im-learning-to-code-by-building-180-websites-in</p>
                 <p><span>Jul 24, 2013 - </span>Build a different website every day for 180 consecutive days. Every website must be accompanied by a blog post. Any code I write must be ...</p>
+                <p><?php echo 'Ihre IP ist: '.$_SERVER['REMOTE_ADDR']; ?></p>
             </div>
 
-            <div style="display: none;">
+            <!-- <div style="display: none;"> -->
+            <div>
                 <iframe name="formpopup">
 
                 </iframe>
             </div>
 
             <!-- <form action="https://docs.google.com/forms/d/e/1FAIpQLSct62WRoVkTFTcfwWkqsUOwm328Uq4A-NFEDNOkaUXju1soZw/formResponse" target="google" onsubmit="window.location.href = '7thankyou.html';" id="bootstrapForm" method="POST"> -->
-            <form action="https://docs.google.com/forms/d/e/1FAIpQLSct62WRoVkTFTcfwWkqsUOwm328Uq4A-NFEDNOkaUXju1soZw/formResponse" target="formpopup" onsubmit="window.location.href = '7thankyou.html';" id="bootstrapForm" method="POST">
+            <!-- onsubmit="window.location.href='7tahnkyou.html'" -->
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSct62WRoVkTFTcfwWkqsUOwm328Uq4A-NFEDNOkaUXju1soZw/formResponse" onsubmit="window.location.href='7thankyou.html'" target="formpopup" id="bootstrapForm" method="POST">
                 <fieldset>
                     <h2>Test-Form<br><small></small></h2>
                 </fieldset>
@@ -119,14 +189,13 @@
                             <textarea id="1468137294" name="entry.1468137294" class="form-control"></textarea>
                         </div>
                     </fieldset>
-
                 </div>
 
                 <!-- Field type: "linear" id: "183119718" -->
                 <fieldset>
                     <legend for="183119718">Test-Frage</legend>
-                    <div class="form-group">
-                        <div id="test_likert_id">
+                    <div id="likert_test_id" class="form-group">
+                        <div>
                             <label class="radio-inline">
                                 <input onclick="writeLikertToLog(this, value)" type="radio" name="entry.1803460380" value="1" required> 1
                             </label>
@@ -151,7 +220,7 @@
                 </fieldset>
 
                 <input type="hidden" name="fvv" value="1">
-                <input type="hidden" name="fbzx" value="8480538725191393177">
+                <input type="hidden" name="fbzx" value="8208126504714022899">
                 <!--
         CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
         This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
@@ -160,7 +229,7 @@
     -->
                 <input type="hidden" name="pageHistory" value="0">
 
-                <input class="btn btn-primary" type="submit" value="Submit">
+                <input class="btn btn-primary btn-lg active" type="submit" value="Weiter">
             </form>
         </article>
         <nav></nav>

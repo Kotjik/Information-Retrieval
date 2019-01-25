@@ -359,7 +359,7 @@
 
         #progressbar>div {
             background-color: #337ab7;
-            width: 50%;
+            width: 75%;
             /* Adjust with JavaScript */
             height: 3px;
             border-radius: 10px;
@@ -411,7 +411,7 @@
             $.getJSON('http://ip.jsontest.com/?callback=?', function(data) {
                 var ip_json = JSON.stringify(data, null, 2);
                 var ip_object = JSON.parse(ip_json);
-                document.getElementById("1828424441").innerHTML = ip_object.ip;
+                document.getElementById("623500627").innerHTML = ip_object.ip;
                 // console.log(ip_object.ip);
             });
         }
@@ -429,16 +429,16 @@
         }
 
         function writeLinkToLog(elem) {
-            document.getElementById("1173700859").innerHTML += elem.parentNode.parentNode.id + ", " + getFormattedDate() + "\n";
+            document.getElementById("946013436").innerHTML += elem.parentNode.parentNode.id + ", " + getFormattedDate() + "\n";
         }
 
         function writeLikertToLog(elem, value) {
-            document.getElementById("1173700859").innerHTML += elem.parentNode.parentNode.parentNode.id + ", " + value + ", " + getFormattedDate() + "\n";
+            document.getElementById("946013436").innerHTML += elem.parentNode.parentNode.parentNode.id + ", " + value + ", " + getFormattedDate() + "\n";
         }
 
         // Google form pop up
         function newUrl() {
-            window.location.href = '5cannabis_pos.html';
+            window.location.href = '6meinung.html';
         }
 
         function createIframe() {
@@ -461,7 +461,7 @@
             </div>
             <!--Searchbar-->
             <form class="searchForm">
-                <input class="searchBar" type="text" value="Autonomes Fahren">
+                <input class="searchBar" type="text" value="Cannabis Legalisierung">
                 </datalist>
             </form>
         </div>
@@ -482,52 +482,52 @@
             <div id="googlepopup" style="display: none;">
 
             </div>
-            <form action="https://docs.google.com/forms/d/e/1FAIpQLSdfh-2z3AINOlMTABoRGFr-h9TF09h6NNzLtBXHsyUFp3HPhQ/formResponse" target="formpopup" onsubmit="createIframe()" id="bootstrapForm" method="POST">
+
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSfHhXZthVYLB_1J_vzJEjpdL69gFXcXGakvhntKX0SsExl7dw/formResponse" target="formpopup" onsubmit="createIframe()" id="bootstrapForm" method="POST">
                 <div style="display: none;">
-
                     <fieldset>
-                        <h2>3_Autonom_Log<br><small></small></h2>
+                        <h2>4_Cannabis_Log<br><small></small></h2>
                     </fieldset>
 
-                    <!-- Field type: "paragraph" id: "413003605" -->
+                    <!-- Field type: "paragraph" id: "1051102496" -->
                     <fieldset>
-                        <legend for="413003605">Art</legend>
+                        <legend for="1051102496">Art</legend>
                         <div class="form-group">
-                            <textarea id="1935289469" name="entry.1935289469" class="form-control">Autonom-Positiv</textarea>
+                            <textarea id="1566378084" name="entry.1566378084" class="form-control">Cannabis-Positiv</textarea>
                         </div>
                     </fieldset>
 
-                    <!-- Field type: "paragraph" id: "721482541" -->
+                    <!-- Field type: "paragraph" id: "519799813" -->
                     <fieldset>
-                        <legend for="721482541">IP-Adresse</legend>
+                        <legend for="519799813">IP-Adresse</legend>
                         <div class="form-group">
-                            <textarea id="1828424441" name="entry.1828424441" class="form-control"></textarea>
+                            <textarea id="623500627" name="entry.623500627" class="form-control"></textarea>
                         </div>
                     </fieldset>
 
-                    <!-- Field type: "paragraph" id: "140226317" -->
+                    <!-- Field type: "paragraph" id: "1883718840" -->
                     <fieldset>
-                        <legend for="140226317">Autonom-Log-Daten</legend>
+                        <legend for="1883718840">Cannabis-Log-Daten</legend>
                         <div class="form-group">
-                            <textarea id="1173700859" name="entry.1173700859" class="form-control"></textarea>
+                            <textarea id="946013436" name="entry.946013436" class="form-control"></textarea>
                         </div>
                     </fieldset>
 
                     <input type="hidden" name="fvv" value="1">
-                    <input type="hidden" name="fbzx" value="-771929881317860808">
+                    <input type="hidden" name="fbzx" value="-2425181750550527076">
                     <!--
-    CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
-    This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
-    Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
-    We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
--->
+                        CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
+                        This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
+                        Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
+                        We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
+                    -->
                     <input type="hidden" name="pageHistory" value="0">
                 </div>
                 <input class="float" type="submit" value="Weiter">
             </form>
 
             <!-- <div>
-                <a href="4autonom_neg.html" class="btn btn-primary btn-lg float">
+                <a href="4cannabis_neg.html" class="btn btn-primary btn-lg float">
                     <b>Weiter</b>
                 </a>
             </div> -->
@@ -544,13 +544,52 @@
 
             <ul>
 
-                <div id="link_autonom_pos_1" class="searchResultsItem">
-                    <li><a onClick="writeLinkToLog(this)" href="https://www.br.de/nachricht/tdt-autonomes-fahren-100.html" target="linkpopup">Autonomes Fahren: Die Zukunft ist selbstfahrend - und auch sicher ...</a></li>
-                    <p class="resultAddr">https://www.br.de/nachricht/tdt-autonomes-fahren-100.html</p>
-                    <p><span>02.08.2016 - </span>Hände ans Lenkrad! Dieser Leitspruch während des Autofahrens gilt bis heute. Doch daran soll sich in Zukunft etwas ändern. Das autonome Fahren verspricht ...</p>
+                <div id="link_cannabis_pos_1" class="searchResultsItem">
+                    <li><a onClick="writeLinkToLog(this)" href="https://www.n-tv.de/wissen/Cannabis-Medizin-wird-zur-Kassenleistung-article19590447.html" target="linkpopup">Versorgung schwer kranker Menschen: Cannabis-Medizin wird zur ...</a></li>
+                    <p class="resultAddr">https://www.n-tv.de/wissen/Cannabis-Medizin-wird-zur-Kassenleistung-article19590447.html</p>
+                    <p><span>19.01.2017 - </span>Es lindert Schmerzen, wirkt krampflösend und macht heiter: Cannabis hat als Heilpflanze eine lange Tradition und wird auch von Ärzten ...</p>
                 </div>
 
-                <form id="likert_autonom_pos_1" action="">
+                <form id="likert_cannabis_pos_1" action="">
+                    <label class="statement">Dieses Suchergebnis ist glaubwürdig.</label>
+                    <ul class='likert'>
+                        <li>
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="1">
+                            <label>stimme überhaupt nicht zu</label>
+                        </li>
+                        <li>
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="2">
+                            <label>stimme nicht zu</label>
+                        </li>
+                        <li>
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="3">
+                            <label>stimme eher nicht zu</label>
+                        </li>
+                        <li>
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="4">
+                            <label>weder noch</label>
+                        </li>
+                        <li>
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="5">
+                            <label>stimme eher zu</label>
+                        </li>
+                        <li>
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="6">
+                            <label>stimme zu</label>
+                        </li>
+                        <li>
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="7">
+                            <label>stimme völlig zu</label>
+                        </li>
+                    </ul>
+                </form>
+                <div id="link_cannabis_neg_1" class="searchResultsItem">
+                    <li><a onClick="writeLinkToLog(this)" href="https://www.sueddeutsche.de/gesundheit/cannabis-konsum-und-seine-folgen-sucht-psychose-fuehrerscheinentzug-1.1778413" target="linkpopup">Cannabis: Der Konsum und seine Folgen - Gesundheit - Süddeutsche ...</a></li>
+                    <p class="resultAddr">https://www.sueddeutsche.de/gesundheit/cannabis-konsum-und-seine-folgen-sucht-psychose-fuehrerscheinentzug-1.1778413</p>
+                    <p><span>11.03.2018 - </span>Mehr als zwei Millionen Deutsche konsumieren gelegentlich oder regelmäßig Cannabis. Wie hoch ist ihr Risiko, davon abhängig zu werden?</p>
+                </div>
+
+                <form id="likert_cannabis_neg_1" action="">
                     <label class="statement">Dieses Suchergebnis ist glaubwürdig.</label>
                     <ul class='likert'>
                         <li>
@@ -584,13 +623,13 @@
                     </ul>
                 </form>
 
-                <div id="link_autonom_neg_1" class="searchResultsItem">
-                    <li><a onClick="writeLinkToLog(this)" href="https://www.sueddeutsche.de/auto/autonomes-fahren-wenn-computer-den-menschen-abloesen-1.2831833" target="linkpopup">Autonomes Fahren: Neue Risiken durch Hacker - Auto & Mobil ...</a></li>
-                    <p class="resultAddr">https://www.sueddeutsche.de/auto/autonomes-fahren-wenn-computer-den-menschen-abloesen-1.2831833</p>
-                    <p><span>24.01.2016 - </span>Eine Studie der TU Dresden sagt durch autonomes Fahren weniger Unfälle, dafür aber ganz neue Risiken auf der Straße voraus.</p>
+                <div id="link_cannabis_pos_2" class="searchResultsItem">
+                    <li><a onClick="writeLinkToLog(this)" href="https://www.huffingtonpost.de/2015/02/16/cannabis-gruende-kiffen_n_6691112.html" target="linkpopup">Cannabis: 19 wissenschaftliche Gründe, warum Sie mehr kiffen sollten ...</a></li>
+                    <p class="resultAddr">https://www.huffingtonpost.de/2015/02/16/cannabis-gruende-kiffen_n_6691112.html</p>
+                    <p>16.02.2015 - </span>Nie zuvor ist Deutschland einer Cannabis-Legalisierung näher gewesen als heute. Das mag auch daran liegen, dass es keine guten ...</p>
                 </div>
 
-                <form id="likert_autonom_neg_1" action="">
+                <form id="likert_cannabis_pos_2" action="">
                     <label class="statement">Dieses Suchergebnis ist glaubwürdig.</label>
                     <ul class='likert'>
                         <li>
@@ -624,13 +663,13 @@
                     </ul>
                 </form>
 
-                <div id="link_autonom_pos_2" class="searchResultsItem">
-                    <li><a onClick="writeLinkToLog(this)" href="https://www.autonomes-fahren.de/rushhour-mit-autonomen-autos/" target="linkpopup">ACC Autos haben positiven Effekt | Autonomes Fahren & Co</a></li>
-                    <p class="resultAddr">https://www.autonomes-fahren.de/rushhour-mit-autonomen-autos/</p>
-                    <p><span>24.04.2018 - </span>Sollte das Autonome Fahren bei der Rushhour eingesetzt werden, würde ... schon wenige Fahrzeuge dieser Art einen positiven Effekt hätten.</p>
+                <div id="link_cannabis_neg_2" class="searchResultsItem">
+                    <li><a onClick="writeLinkToLog(this)" href="https://www.ndr.de/ratgeber/gesundheit/Warum-Cannabis-fuer-Jugendliche-so-gefaehrlich-ist,cannabis352.html" target="linkpopup">Warum Cannabis für Jugendliche so gefährlich ist | NDR.de ...</a></li>
+                    <p class="resultAddr">https://www.ndr.de/ratgeber/gesundheit/Warum-Cannabis-fuer-Jugendliche-so-gefaehrlich-ist,cannabis352.html</p>
+                    <p><span>01.02.2016 - </span>Welche Folgen eine solche Freigabe - auch mit Altersbeschränkung - für Jugendliche hätte und warum Cannabis gerade für sie gefährlich ist, …</p>
                 </div>
 
-                <form id="likert_autonom_pos_2" action="">
+                <form id="likert_cannabis_neg_2" action="">
                     <label class="statement">Dieses Suchergebnis ist glaubwürdig.</label>
                     <ul class='likert'>
                         <li>
@@ -664,54 +703,14 @@
                     </ul>
                 </form>
 
-                <div id="link_autonom_neg_2" class="searchResultsItem">
-                    <li><a onClick="writeLinkToLog(this)" href="https://www.faz.net/aktuell/wirtschaft/unternehmen/autonomes-fahren-keine-folgen-fuer-tesla-nach-toedlichem-unfall-14708191.html" target="linkpopup">Autonomes Fahren: Keine Folgen für Tesla nach tödlichem Unfall - FAZ</a></li>
-                    <p class="resultAddr">https://www.faz.net/aktuell/wirtschaft/unternehmen/autonomes-fahren-keine-folgen-fuer-tesla-nach-toedlichem-unfall-14708191.html</p>
-                    <p><span>20.01.2017 - </span>Im vergangenen Jahr starb der Fahrer eines Tesla-Wagens, weil der Autopilot einen Lastwagen übersah. Die zuständige Behörde untersuchte.</p>
-                </div>
-
-                <form id="likert_autonom_neg_2" action="">
-                    <label class="statement">Dieses Suchergebnis ist glaubwürdig.</label>
-                    <ul class='likert'>
-                        <li>
-                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="1">
-                            <label>stimme überhaupt nicht zu</label>
-                        </li>
-                        <li>
-                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="2">
-                            <label>stimme nicht zu</label>
-                        </li>
-                        <li>
-                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="3">
-                            <label>stimme eher nicht zu</label>
-                        </li>
-                        <li>
-                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="4">
-                            <label>weder noch</label>
-                        </li>
-                        <li>
-                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="5">
-                            <label>stimme eher zu</label>
-                        </li>
-                        <li>
-                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="6">
-                            <label>stimme zu</label>
-                        </li>
-                        <li>
-                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="7">
-                            <label>stimme völlig zu</label>
-                        </li>
-                    </ul>
-                </form>
-
-                <div id="link_autonom_pos_3" class="searchResultsItem">
-                    <li><a onClick="writeLinkToLog(this)" href="https://www.handelsblatt.com/technik/energie-umwelt/mobilitaet-der-zukunft/das-selbststeuernde-fahrzeug-kommt-mehr-sicherheit-weniger-staus/9107498-2.html" target="linkpopup">Das selbststeuernde Fahrzeug kommt: Mehr Sicherheit, weniger Staus</a></li>
-                    <p class="resultAddr">https://www.handelsblatt.com/technik/energie-umwelt/mobilitaet-der-zukunft/das-selbststeuernde-fahrzeug-kommt-mehr-sicherheit-weniger-staus/9107498-2.html
+                <div id="link_cannabis_pos_3" class="searchResultsItem">
+                    <li><a onClick="writeLinkToLog(this)" href="https://www.deutschlandfunkkultur.de/cannabis-konsum-jeder-widerspruch-verschwindet.976.de.html?dram:article_id=427444" target="linkpopup">Cannabis-Konsum - "Jeder Widerspruch verschwindet"</a></li>
+                    <p class="resultAddr">https://www.deutschlandfunkkultur.de/cannabis-konsum-jeder-widerspruch-verschwindet.976.de.html?dram:article_id=427444
                     </p>
-                    <p>Das selbststeuernde Fahrzeug kommt Alles auf Autopilot. Seite 2 von 2: Mehr Sicherheit, weniger Staus. Ähnliche Demonstrationen gibt es bei fast allen großen ...</p>
+                    <p><span>06.09.2018 - </span>Der weltweite Konsum von Cannabis ist auf einem Rekordhoch angelangt. ... THC gehört zu den wichtigsten und gut erforschten Wirkstoffen in ...</p>
                 </div>
 
-                <form id="likert_autonom_pos_3" action="">
+                <form id="likert_cannabis_pos_3" action="">
                     <label class="statement">Dieses Suchergebnis ist glaubwürdig.</label>
                     <ul class='likert'>
                         <li>
@@ -745,14 +744,14 @@
                     </ul>
                 </form>
 
-                <div id="link_autonom_neg_3" class="searchResultsItem">
-                    <li><a onClick="writeLinkToLog(this)" href="http://www.spiegel.de/wissenschaft/technik/unfaelle-mit-selbstfahrenden-autos-wer-soll-leben-wer-soll-sterben-a-1234901.html" target="linkpopup">Ethik und autonomes Fahren: Einer muss sterben - Spiegel Online</a></li>
-                    <p class="resultAddr">http://www.spiegel.de/wissenschaft/technik/unfaelle-mit-selbstfahrenden-autos-wer-soll-leben-wer-soll-sterben-a-1234901.html
+                <div id="link_cannabis_neg_3" class="searchResultsItem">
+                    <li><a onClick="writeLinkToLog(this)" href="https://www.sueddeutsche.de/gesundheit/cannabis-abhaengigkeit-die-gefahr-ist-gross-die-droge-zu-unterschaetzen-1.1775128" target="linkpopup">Cannabis-Abhängigkeit "Die Gefahr ist groß, die Droge zu ...</a></li>
+                    <p class="resultAddr">https://www.sueddeutsche.de/gesundheit/cannabis-abhaengigkeit-die-gefahr-ist-gross-die-droge-zu-unterschaetzen-1.1775128
                     </p>
-                    <p><span>24.10.2018 - </span>Ethik und autonomes Fahren Einer muss sterben - nur wer? Fahrer oder Kind, Arzt oder Obdachloser, Frau oder Mann? Nur einer kann einen ...</p>
+                    <p><span>11.03.2018 - </span>Vor allem Jugendliche rauchen Cannabis und setzen sich dem Risiko aus, abhängig zu werden. Suchtexperte Josef Strohbach erläutert, …</p>
                 </div>
 
-                <form id="likert_autonom_neg_3" action="">
+                <form id="likert_cannabis_neg_3" action="">
                     <label class="statement">Dieses Suchergebnis ist glaubwürdig.</label>
                     <ul class='likert'>
                         <li>
@@ -786,13 +785,13 @@
                     </ul>
                 </form>
 
-                <div id="link_autonom_pos_4" class="searchResultsItem">
-                    <li><a onClick="writeLinkToLog(this)" href="https://www.next-mobility.news/autonomes-fahren-potenziale-und-auswirkungen-bis-2030-a-737285/" target="linkpopup">Autonomes Fahren – Potenziale und Auswirkungen bis 2030</a></li>
-                    <p class="resultAddr">https://www.next-mobility.news/autonomes-fahren-potenziale-und-auswirkungen-bis-2030-a-737285/</p>
-                    <p><span>27.07.2018 - </span>Automatisiertes und Autonomes Fahren wird sich einer neuen Studien zufolge auf sämtliche Branchen und Unternehmen nachhaltig positiv .</p>
+                <div id="link_cannabis_pos_4" class="searchResultsItem">
+                    <li><a onClick="writeLinkToLog(this)" href="https://www.huffingtonpost.de/2015/01/31/cannabis-gut-deutschland_n_6585256.html" target="linkpopup">So sehr würden deutsche Landwirte von der Cannabis-Legalisierung ...</a></li>
+                    <p class="resultAddr">https://www.huffingtonpost.de/2015/01/31/cannabis-gut-deutschland_n_6585256.html</p>
+                    <p><span>31.01.2015 - </span>Das Bundsagrarministerium hat sich indirekt für eine Freigabe von Cannabis ausgesprochen. Davon würden deutsche Bauern enorm ...</p>
                 </div>
 
-                <form id="likert_autonom_pos_4" action="">
+                <form id="likert_cannabis_pos_4" action="">
                     <label class="statement">Dieses Suchergebnis ist glaubwürdig.</label>
                     <ul class='likert'>
                         <li>
@@ -826,13 +825,13 @@
                     </ul>
                 </form>
 
-                <div id="link_autonom_neg_4" class="searchResultsItem">
-                    <li><a onClick="writeLinkToLog(this)" href="https://www.galileo.tv/science/gefaehrlich-selbstfahrende-autos-viel-zu-leicht-austricksen-kann/" target="linkpopup">Gefährlich: Selbstfahrende Autos kann man viel zu leicht austricksen</a></li>
-                    <p class="resultAddr">https://www.galileo.tv/science/gefaehrlich-selbstfahrende-autos-viel-zu-leicht-austricksen-kann/</p>
-                    <p><span>08.08.2017 - </span>Kameras, die die Umgebung nach Hindernissen, Straßenmarkierungen und Schildern abscannen, ermöglichen autonomes Fahren überhaupt ...</p>
+                <div id="link_cannabis_neg_4" class="searchResultsItem">
+                    <li><a onClick="writeLinkToLog(this)" href="http://www.itsrap.de/allgemein/die-top-7-gruende-gegen-die-hanf-legalisierung-von-marlene-mortler/" target="linkpopup">Die Top 7 Gründe gegen die Hanf-Legalisierung von Marlene Mortler ...</a></li>
+                    <p class="resultAddr">http://www.itsrap.de/allgemein/die-top-7-gruende-gegen-die-hanf-legalisierung-von-marlene-mortler/</p>
+                    <p><span>08.10.2015 - </span>Ein Zusammenschnitt einiger Aussagen der u.a. Drogenbeauftragtin Marlene Mortler. Und sie hat wirklich hieb- und stichfeste Argumente ...</p>
                 </div>
 
-                <form id="likert_autonom_neg_4" action="">
+                <form id="likert_cannabis_neg_4" action="">
                     <label class="statement">Dieses Suchergebnis ist glaubwürdig.</label>
                     <ul class='likert'>
                         <li>

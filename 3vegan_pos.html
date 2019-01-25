@@ -246,8 +246,6 @@
             text-decoration: none;
             font-size: 16px;
         }
-
-
         /* ------Likert CSS-------*/
 
         html,
@@ -350,10 +348,8 @@
         #progressbar {
             position: fixed;
             width: 245px;
-
             z-index: 1000;
             top: 60px;
-
             right: 698px;
             background-color: #bcbcbc;
             border-radius: 13px;
@@ -375,10 +371,8 @@
             width: 250px;
             height: 45px;
             margin-top: 15px;
-
             z-index: 1000;
             top: 60px;
-
             right: 700px;
             background-color: #337ab7;
             color: #FFF;
@@ -394,39 +388,24 @@
         .my-float {
             margin-top: 22px;
         }
-
         /* ------------ Floating Article ----------- */
+
         .article {
             position: fixed;
             width: 900px;
             height: 720px;
             margin-top: 80px;
             right: 50px;
-
             z-index: 1000;
             top: 50px;
-
             text-align: left;
             text-decoration: none;
             font-size: 18px;
             padding-top: 0px;
         }
-
     </style>
 
     <script>
-        // Random Url
-        var urlArray = [
-            "4autonom_neg.html",
-            "4autonom_pos.html"
-        ];
-
-        function randomUrl() {
-            var randomNumber = Math.floor(Math.random() * urlArray.length);
-            var newUrl = urlArray[randomNumber];
-            window.location.href = newUrl;
-        }
-
         // IP-Adresse
         function getIP() {
             $.getJSON('http://ip.jsontest.com/?callback=?', function(data) {
@@ -455,6 +434,18 @@
 
         function writeLikertToLog(elem, value) {
             document.getElementById("689994586").innerHTML += elem.parentNode.parentNode.parentNode.id + ", " + value + ", " + getFormattedDate() + "\n";
+        }
+
+        // Google form pop up
+        function newUrl() {
+            window.location.href = '4autonom_pos.html';
+        }
+
+        function createIframe() {
+            document.getElementById("googlepopup").innerHTML = "<iframe name='formpopup' id='my_iframe' ></iframe>";
+            document.getElementById('my_iframe').onload = function() {
+              newUrl();
+            }
         }
     </script>
 
@@ -488,12 +479,10 @@
         </div>
 
         <div class="searchResults">
-            <div style="display: none;">
-                <iframe name="formpopup">
+            <div id="googlepopup" style="display: none;">
 
-                </iframe>
             </div>
-            <form action="https://docs.google.com/forms/d/e/1FAIpQLSdldSmqRz7IBPg7EtLuLa7Z6wjEJosJsuNUeW5YH7FSRo0U1A/formResponse" target="formpopup" onsubmit="randomUrl();" id="bootstrapForm" method="POST">
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSdldSmqRz7IBPg7EtLuLa7Z6wjEJosJsuNUeW5YH7FSRo0U1A/formResponse" target="formpopup" onsubmit="createIframe()" id="bootstrapForm" method="POST">
                 <div style="display: none;">
 
                     <fieldset>
@@ -547,19 +536,19 @@
                 <div></div>
             </div>
 
-          <div class="article">
-            <p><u>Klicke auf einen Link, um hier den Artikel zu öffnen:</u></p>
-            <iframe height="100%" width="100%" name="linkpopup">
-            </iframe>
-          </div>
+            <div class="article">
+                <p><u>Klicke auf einen Link, um hier den Artikel zu öffnen:</u></p>
+                <iframe height="100%" width="100%" name="linkpopup">
+                </iframe>
+            </div>
 
             <ul>
 
-              <div id="link_vegan_pos_1" class="searchResultsItem">
-                  <li><a onClick="writeLinkToLog(this)" href="https://www.ugb.de/vollwert-ernaehrung/vegane-ernaehrung-gesundheit/" target="linkpopup">Vegane Ernährung: Ein Plus für die Gesundheit? - Veganer ... - UGB</a></li>
-                  <p class="resultAddr">https://www.ugb.de/vollwert-ernaehrung/vegane-ernaehrung-gesundheit/</p>
-                  <p>Vegane Ernährung - Veganismus: Eine gute Orientierung für die praktische ... Auch aus gesundheitlicher Sicht haben diese Ernährungsformen viele Vorteile ...</p>
-              </div>
+                <div id="link_vegan_pos_1" class="searchResultsItem">
+                    <li><a onClick="writeLinkToLog(this)" href="https://www.ugb.de/vollwert-ernaehrung/vegane-ernaehrung-gesundheit/" target="linkpopup">Vegane Ernährung: Ein Plus für die Gesundheit? - Veganer ... - UGB</a></li>
+                    <p class="resultAddr">https://www.ugb.de/vollwert-ernaehrung/vegane-ernaehrung-gesundheit/</p>
+                    <p>Vegane Ernährung - Veganismus: Eine gute Orientierung für die praktische ... Auch aus gesundheitlicher Sicht haben diese Ernährungsformen viele Vorteile ...</p>
+                </div>
 
                 <form id="likert_vegan_pos_1" action="">
                     <label class="statement">Dieses Suchergebnis ist glaubwürdig.</label>
@@ -601,8 +590,6 @@
                     <p><span>23.01.2013 - </span>In Frankfurt hat nun ein Laden für Veganer eröffnet. Im Gespräch äußert sich Antje Gahl von der Deutschen Gesellschaft für Ernährung über ...</p>
                 </div>
 
-
-
                 <form id="likert_vegan_neg_1" action="">
                     <label class="statement">Dieses Suchergebnis ist glaubwürdig.</label>
                     <ul class='likert'>
@@ -637,12 +624,10 @@
                     </ul>
                 </form>
 
-
-
                 <div id="link_vegan_pos_2" class="searchResultsItem">
                     <li><a onClick="writeLinkToLog(this)" href="http://up2vegan.com/?p=377" target="linkpopup">Vegan leben aus gesundheitlichen Gründen - go Vegan – for a better ...</a></li>
                     <p class="resultAddr">http://up2vegan.com/?p=377</p>
-                    <p>Vegan leben aus gesundheitlichen Gründen. Viele Zivilisationskrankheiten werden 	auf den Konsum von Fleisch zurückgeführt. Rheuma, Diabetes, Übergewicht ...</p>
+                    <p>Vegan leben aus gesundheitlichen Gründen. Viele Zivilisationskrankheiten werden auf den Konsum von Fleisch zurückgeführt. Rheuma, Diabetes, Übergewicht ...</p>
                 </div>
 
                 <form id="likert_vegan_pos_2" action="">
@@ -718,8 +703,6 @@
                         </li>
                     </ul>
                 </form>
-
-
 
                 <div id="link_vegan_pos_3" class="searchResultsItem">
                     <li><a onClick="writeLinkToLog(this)" href="https://www.vegan-werden.de/gesundheitliche-vorteile-veganismus.html" target="linkpopup">Gesundheitliche Vorteile der veganen Lebensweise | das vegane ...</a></li>
@@ -803,8 +786,6 @@
                     </ul>
                 </form>
 
-
-
                 <div id="link_vegan_pos_4" class="searchResultsItem">
                     <li><a onClick="writeLinkToLog(this)" href="https://www.sueddeutsche.de/leben/vegane-ernaehrung-nicht-fisch-nicht-fleisch-1.1905127-2" target="linkpopup">Vegane Ernährung - Bessere Haut, bessere Figur ... - Süddeutsche.de</a></li>
                     <p class="resultAddr">https://www.sueddeutsche.de/leben/vegane-ernaehrung-nicht-fisch-nicht-fleisch-1.1905127-2</p>
@@ -815,31 +796,31 @@
                     <label class="statement">Dieses Suchergebnis ist glaubwürdig.</label>
                     <ul class='likert'>
                         <li>
-                            <input onClick="printInfo(this, value)" type="radio" name="likert" value="-3">
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="1">
                             <label>stimme überhaupt nicht zu</label>
                         </li>
                         <li>
-                            <input onClick="printInfo(this, value)" type="radio" name="likert" value="-2">
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="2">
                             <label>stimme nicht zu</label>
                         </li>
                         <li>
-                            <input onClick="printInfo(this, value)" type="radio" name="likert" value="-1">
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="3">
                             <label>stimme eher nicht zu</label>
                         </li>
                         <li>
-                            <input onClick="printInfo(this, value)" type="radio" name="likert" value="0">
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="4">
                             <label>weder noch</label>
                         </li>
                         <li>
-                            <input onClick="printInfo(this, value)" type="radio" name="likert" value="1">
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="5">
                             <label>stimme eher zu</label>
                         </li>
                         <li>
-                            <input onClick="printInfo(this, value)" type="radio" name="likert" value="2">
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="6">
                             <label>stimme zu</label>
                         </li>
                         <li>
-                            <input onClick="printInfo(this, value)" type="radio" name="likert" value="3">
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="7">
                             <label>stimme völlig zu</label>
                         </li>
                     </ul>

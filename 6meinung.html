@@ -1,235 +1,298 @@
 <!DICTYPE html>
+
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="res\css\index.css">
-    <link rel="stylesheet" type="text/css" href="res\css\likert.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha256-2Pjr1OlpZMY6qesJM68t2v39t+lMLvxwpa8QlRjJroA=" crossorigin="anonymous"></script>
 
+    <style>
+        /*---------------------------------
+      new minimalistic design
+      ----------------------------------*/
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .questionnaire {
+            align: center;
+        }
+
+        #main {
+            display: flex;
+            min-height: calc(100vh - 40vh);
+        }
+
+        #main > article {
+            flex: 1;
+            background: #EAF1F7;
+            align: middle;
+        }
+
+        #main > nav,
+        #main > aside {
+            flex: 0 0 20vw;
+            background: #A6C4E0;
+        }
+
+        #main > nav {
+            order: -1;
+        }
+
+        header,
+        footer,
+        article,
+        nav,
+        aside {
+            padding: 1em;
+        }
+
+        header {
+            background: #C7D9EF;
+            height: 20vh;
+            text-align: center;
+        }
+
+        footer {
+            background: #A6C4E0;
+            height: 20vh;
+            text-align: center;
+        }
+    </style>
+    <script>
+        // IP-Adresse
+        function getIP() {
+            $.getJSON('http://ip.jsontest.com/?callback=?', function(data) {
+                var ip_json = JSON.stringify(data, null, 2);
+                var ip_object = JSON.parse(ip_json);
+                document.getElementById("1004834971").innerHTML = ip_object.ip;
+                // console.log(ip_object.ip);
+            });
+        }
+        window.onload = function() {
+            getIP();
+        }
+
+        // Google form popup
+        function newUrl() {
+            window.location.href = '7thankyou.html';
+        }
+
+        function createIframe() {
+            document.getElementById("googlepopup").innerHTML = "<iframe name='formpopup' id='my_iframe' ></iframe>";
+            document.getElementById('my_iframe').onload = function() {
+              newUrl();
+            }
+        }
+    </script>
 </head>
 
 <body>
-  <header>
-    <h1>Bestätigungsfehler und Glaubwürdigkeit bei der Websuche</h1>
-    <h2>Eine Online-Studie</h2>
-  </header>
-  <div id="main">
-    <article>
-      <p style="text-align: justify;">Zu guter Letzt eine kleine Abschlus Frage: <b>Wie stehen Sie zu folgenden Themen?</b></p>
+    <header>
+        <h1>Bestätigungsfehler und Glaubwürdigkeit bei der Websuche</h1>
+        <h2>Eine Online-Studie</h2>
+    </header>
+    <div id="main">
+        <article>
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSfbIkgWrK52zJXGOHUYyiIZyUGTarXYUK77HrGq2QMd-C0V3Q/formResponse" target="formpopup" onsubmit="createIframe()" id="bootstrapForm" method="POST">
+                <fieldset>
+                    <h2>Wie stehen Sie zu folgenden Themen?<br></h2>
+                </fieldset>
 
-      <form action="https://docs.google.com/forms/d/e/1FAIpQLSfbIkgWrK52zJXGOHUYyiIZyUGTarXYUK77HrGq2QMd-C0V3Q/formResponse" target="_blank" onsubmit="window.location.href = '7thankyou.html';" id="bootstrapForm" method="POST">
-    <fieldset>
-        <h2>Meinungsänderung<br><small>Wie stehen Sie zu folgenden Themen?</small></h2>
-    </fieldset>
+                <div id="googlepopup" style="display: none;">
+                </div>
 
+                <div style="display:none;">
+                    <!-- Field type: "paragraph" id: "236683313" -->
+                    <fieldset>
+                        <legend for="236683313">IP-Adresse</legend>
+                        <div class="form-group">
+                            <textarea id="1004834971" name="entry.1004834971" class="form-control"></textarea>
+                        </div>
+                    </fieldset>
+                </div>
 
-    <!-- Field type: "linear" id: "1121081159" -->
-    <fieldset>
-        <legend for="1121081159">Veganismus</legend>
-        <div class="form-group">
-            <div>
-            <label class="radio-inline">
-                <input type="radio" name="entry.846284187" value="1" required>
-                1
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="entry.846284187" value="2" required>
-                2
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="entry.846284187" value="3" required>
-                3
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="entry.846284187" value="4" required>
-                4
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="entry.846284187" value="5" required>
-                5
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="entry.846284187" value="6" required>
-                6
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="entry.846284187" value="7" required>
-                7
-            </label>
-            </div>
-            <div>
-                <div>1: äußerst negativ</div>
-                <div>7: äußerst positiv</div>
-            </div>
-        </div>
-    </fieldset>
+                <!-- Field type: "linear" id: "1121081159" -->
+                <fieldset>
+                    <legend for="1121081159">Veganismus</legend>
+                    <div class="form-group">
+                        <div>
+                            <label class="radio-inline">
+                                <input type="radio" name="entry.846284187" value="1" required> 1
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="entry.846284187" value="2" required> 2
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="entry.846284187" value="3" required> 3
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="entry.846284187" value="4" required> 4
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="entry.846284187" value="5" required> 5
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="entry.846284187" value="6" required> 6
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="entry.846284187" value="7" required> 7
+                            </label>
+                        </div>
+                        <div>
+                            <div>1: äußerst negativ</div>
+                            <div>7: äußerst positiv</div>
+                        </div>
+                    </div>
+                </fieldset>
 
+                <!-- Field type: "choices" id: "1644978957" -->
+                <fieldset>
+                    <legend for="1644978957">Hat sich ihre Meinung durch die vorherige Suche gändert?</legend>
+                    <div class="form-group">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="entry.1106291930" value="nein" required> nein
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="entry.1106291930" value="ja" required> ja
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
 
-    <!-- Field type: "choices" id: "1644978957" -->
-    <fieldset>
-        <legend for="1644978957">Hat sich ihre Meinung durch die vorherige Suche gändert?</legend>
-        <div class="form-group">
-            <div class="radio">
-                <label>
-                    <input type="radio" name="entry.1106291930" value="nein" required>
-                    nein
-                </label>
-            </div>
-            <div class="radio">
-                <label>
-                    <input type="radio" name="entry.1106291930" value="ja" required>
-                    ja
-                </label>
-            </div>
-        </div>
-    </fieldset>
+                <!-- Field type: "linear" id: "1160804058" -->
+                <fieldset>
+                    <legend for="1160804058">Autonomes Fahren</legend>
+                    <div class="form-group">
+                        <div>
+                            <label class="radio-inline">
+                                <input type="radio" name="entry.455744632" value="1" required> 1
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="entry.455744632" value="2" required> 2
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="entry.455744632" value="3" required> 3
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="entry.455744632" value="4" required> 4
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="entry.455744632" value="5" required> 5
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="entry.455744632" value="6" required> 6
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="entry.455744632" value="7" required> 7
+                            </label>
+                        </div>
+                        <div>
+                            <div>1: äußerst negativ</div>
+                            <div>7: äußerst positiv</div>
+                        </div>
+                    </div>
+                </fieldset>
 
+                <!-- Field type: "choices" id: "127456170" -->
+                <fieldset>
+                    <legend for="127456170">Hat sich ihre Meinung durch die vorherige Suche gändert?</legend>
+                    <div class="form-group">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="entry.1954800139" value="nein" required> nein
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="entry.1954800139" value="ja" required> ja
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
 
-    <!-- Field type: "linear" id: "1160804058" -->
-    <fieldset>
-        <legend for="1160804058">Autonomes Fahren</legend>
-        <div class="form-group">
-            <div>
-            <label class="radio-inline">
-                <input type="radio" name="entry.455744632" value="1" required>
-                1
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="entry.455744632" value="2" required>
-                2
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="entry.455744632" value="3" required>
-                3
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="entry.455744632" value="4" required>
-                4
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="entry.455744632" value="5" required>
-                5
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="entry.455744632" value="6" required>
-                6
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="entry.455744632" value="7" required>
-                7
-            </label>
-            </div>
-            <div>
-                <div>1: äußerst negativ</div>
-                <div>7: äußerst positiv</div>
-            </div>
-        </div>
-    </fieldset>
+                <!-- Field type: "linear" id: "1889109442" -->
+                <fieldset>
+                    <legend for="1889109442">Cannabis Legalisierung</legend>
+                    <div class="form-group">
+                        <div>
+                            <label class="radio-inline">
+                                <input type="radio" name="entry.666013641" value="1" required> 1
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="entry.666013641" value="2" required> 2
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="entry.666013641" value="3" required> 3
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="entry.666013641" value="4" required> 4
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="entry.666013641" value="5" required> 5
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="entry.666013641" value="6" required> 6
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="entry.666013641" value="7" required> 7
+                            </label>
+                        </div>
+                        <div>
+                            <div>1: äußerst negativ</div>
+                            <div>7: äußerst positiv</div>
+                        </div>
+                    </div>
+                </fieldset>
 
+                <!-- Field type: "choices" id: "1590613513" -->
+                <fieldset>
+                    <legend for="1590613513">Hat sich ihre Meinung durch die vorherige Suche gändert?</legend>
+                    <div class="form-group">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="entry.714336597" value="nein" required> nein
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="entry.714336597" value="ja" required> ja
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
 
-    <!-- Field type: "choices" id: "127456170" -->
-    <fieldset>
-        <legend for="127456170">Hat sich ihre Meinung durch die vorherige Suche gändert?</legend>
-        <div class="form-group">
-            <div class="radio">
-                <label>
-                    <input type="radio" name="entry.1954800139" value="nein" required>
-                    nein
-                </label>
-            </div>
-            <div class="radio">
-                <label>
-                    <input type="radio" name="entry.1954800139" value="ja" required>
-                    ja
-                </label>
-            </div>
-        </div>
-    </fieldset>
-
-
-    <!-- Field type: "linear" id: "1889109442" -->
-    <fieldset>
-        <legend for="1889109442">Cannabis Legalisierung</legend>
-        <div class="form-group">
-            <div>
-            <label class="radio-inline">
-                <input type="radio" name="entry.666013641" value="1" required>
-                1
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="entry.666013641" value="2" required>
-                2
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="entry.666013641" value="3" required>
-                3
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="entry.666013641" value="4" required>
-                4
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="entry.666013641" value="5" required>
-                5
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="entry.666013641" value="6" required>
-                6
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="entry.666013641" value="7" required>
-                7
-            </label>
-            </div>
-            <div>
-                <div>1: äußerst negativ</div>
-                <div>7: äußerst positiv</div>
-            </div>
-        </div>
-    </fieldset>
-
-
-    <!-- Field type: "choices" id: "1590613513" -->
-    <fieldset>
-        <legend for="1590613513">Hat sich ihre Meinung durch die vorherige Suche gändert?</legend>
-        <div class="form-group">
-            <div class="radio">
-                <label>
-                    <input type="radio" name="entry.714336597" value="nein" required>
-                    nein
-                </label>
-            </div>
-            <div class="radio">
-                <label>
-                    <input type="radio" name="entry.714336597" value="ja" required>
-                    ja
-                </label>
-            </div>
-        </div>
-    </fieldset>
-
-    <input type="hidden" name="fvv" value="1">
-    <input type="hidden" name="fbzx" value="1856745888403448726">
-    <!--
+                <input type="hidden" name="fvv" value="1">
+                <input type="hidden" name="fbzx" value="-330725896885413031">
+                <!--
         CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
         This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
         Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
         We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
     -->
-    <input type="hidden" name="pageHistory" value="0">
+                <input type="hidden" name="pageHistory" value="0">
 
-    <input class="btn btn-primary btn-lg active" type="submit" value="Abschließen">
-</form>
-<a href="7thankyou.html" class="btn btn-primary btn-lg active" role="button">Umfrage Überspringen</a>
+                <input class="btn btn-primary btn-lg active" type="submit" value="Absenden">
+            </form>
+            <a href="7thankyou.html" class="btn btn-primary btn-lg active" role="button">Umfrage Überspringen</a>
 
+            <!-- <a href="7thankyou.html" class="btn btn-primary btn-lg active" role="button">Abschließen</a> -->
+        </article>
+        <nav></nav>
+        <aside></aside>
+    </div>
+    <footer>
 
-      <!-- <a href="7thankyou.html" class="btn btn-primary btn-lg active" role="button">Abschließen</a> -->
-    </article>
-    <nav>Nav</nav>
-    <aside>Aside</aside>
-  </div>
-  <footer>
-
-  </footer>
+    </footer>
 </body>
 
 </html>

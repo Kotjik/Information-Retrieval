@@ -1,34 +1,92 @@
-<html lang="en">
+<!DICTYPE html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <link href='https://fonts.googleapis.com/css?family=Lato:300,400|Montserrat:700' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous">
+
     <style>
-        @import url(//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css);
-        @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+        /*---------------------------------
+      new minimalistic design
+      ----------------------------------*/
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .questionnaire {
+            align: center;
+        }
+
+        #main {
+            display: flex;
+            min-height: calc(100vh - 40vh);
+        }
+
+        #main > article {
+            font-size: 20px;
+            flex: 1;
+            background: #EAF1F7;
+            align: middle;
+        }
+
+        #main > nav,
+        #main > aside {
+            flex: 0 0 20vw;
+            background: #A6C4E0;
+        }
+
+        #main > nav {
+            order: -1;
+        }
+
+        header,
+        footer,
+        article,
+        nav,
+        aside {
+            padding: 1em;
+        }
+
+        header {
+            background: #C7D9EF;
+            height: 20vh;
+            text-align: center;
+        }
+
+        footer {
+            background: #A6C4E0;
+            height: 20vh;
+            text-align: center;
+        }
+
+        .big {
+            font-size: 100px;
+            text-align: center;
+        }
     </style>
-    <link rel="stylesheet" href="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/default_thank_you.css">
-    <script src="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/jquery-1.9.1.min.js"></script>
-    <script src="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/html5shiv.js"></script>
 </head>
 
 <body>
-    <header class="site-header" id="header">
-        <h1 class="site-header__title" data-lead-id="site-header-title">Vielen Dank!</h1>
+    <header>
+        <h1><br>Bestätigungsfehler und Glaubwürdigkeit bei der Websuche</h1>
+
     </header>
-
-    <div class="main-content">
-        <i class="fa fa-check main-content__checkmark" id="checkmark"></i>
-        <p class="main-content__body" data-lead-id="main-content-body">
-            Wir wissen, wie wertvoll Ihre Zeit ist. Es bedeutet uns viel und sie haben uns damit geholfen! Alles wurde gespeichert und Sie können diese Seite nun schließen.
-        </p>
+    <div id="main">
+        <article>
+            <p class="big">VIELEN DANK!</p>
+            <p style="text-align: justify;">Wir wissen, wie wertvoll Ihre Zeit ist. Es bedeutet uns viel und sie haben uns sehr damit geholfen! </p>
+            <p style="text-align: justify;">Alles wurde gespeichert und Sie können diese Seite nun schließen.</p>
+        </article>
+        <nav></nav>
+        <aside></aside>
     </div>
+    <footer>
 
-    <footer class="site-footer" id="footer">
-        <p class="site-footer__fineprint" id="fineprint"></p>
     </footer>
 </body>
 

@@ -407,16 +407,6 @@
 
     <script>
         // Random Url
-        var urlArray = [
-            "4autonom_neg.html",
-            "4autonom_pos.html"
-        ];
-
-        function randomUrl() {
-            var randomNumber = Math.floor(Math.random() * urlArray.length);
-            var newUrl = urlArray[randomNumber];
-            window.location.href = newUrl;
-        }
 
         // IP-Adresse
         function getIP() {
@@ -446,6 +436,18 @@
 
         function writeLikertToLog(elem, value) {
             document.getElementById("1173700859").innerHTML += elem.parentNode.parentNode.parentNode.id + ", " + value + ", " + getFormattedDate() + "\n";
+        }
+
+        // Google form pop up
+        function newUrl() {
+            window.location.href = '5cannabis_neg.html';
+        }
+
+        function createIframe() {
+            document.getElementById("googlepopup").innerHTML = "<iframe name='formpopup' id='my_iframe' ></iframe>";
+            document.getElementById('my_iframe').onload = function() {
+              newUrl();
+            }
         }
     </script>
 
@@ -479,52 +481,50 @@
         </div>
 
         <div class="searchResults">
-            <div style="display: none;">
-                <iframe name="formpopup">
+            <div id="googlepopup" style="display: none;">
 
-                </iframe>
             </div>
-            <form action="https://docs.google.com/forms/d/e/1FAIpQLSdfh-2z3AINOlMTABoRGFr-h9TF09h6NNzLtBXHsyUFp3HPhQ/formResponse" target="formpopup" onsubmit="window.location.href = '5cannabis_neg.html';" id="bootstrapForm" method="POST">
-              <div style="display: none;">
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSdfh-2z3AINOlMTABoRGFr-h9TF09h6NNzLtBXHsyUFp3HPhQ/formResponse" target="formpopup" onsubmit="createIframe()" id="bootstrapForm" method="POST">
+                <div style="display: none;">
 
-                <fieldset>
-                    <h2>3_Autonom_Log<br><small></small></h2>
-                </fieldset>
+                    <fieldset>
+                        <h2>3_Autonom_Log<br><small></small></h2>
+                    </fieldset>
 
-                <!-- Field type: "paragraph" id: "413003605" -->
-                <fieldset>
-                    <legend for="413003605">Art</legend>
-                    <div class="form-group">
-                        <textarea id="1935289469" name="entry.1935289469" class="form-control">Autonom-Negativ</textarea>
-                    </div>
-                </fieldset>
+                    <!-- Field type: "paragraph" id: "413003605" -->
+                    <fieldset>
+                        <legend for="413003605">Art</legend>
+                        <div class="form-group">
+                            <textarea id="1935289469" name="entry.1935289469" class="form-control">Autonom-Negativ</textarea>
+                        </div>
+                    </fieldset>
 
-                <!-- Field type: "paragraph" id: "721482541" -->
-                <fieldset>
-                    <legend for="721482541">IP-Adresse</legend>
-                    <div class="form-group">
-                        <textarea id="1828424441" name="entry.1828424441" class="form-control"></textarea>
-                    </div>
-                </fieldset>
+                    <!-- Field type: "paragraph" id: "721482541" -->
+                    <fieldset>
+                        <legend for="721482541">IP-Adresse</legend>
+                        <div class="form-group">
+                            <textarea id="1828424441" name="entry.1828424441" class="form-control"></textarea>
+                        </div>
+                    </fieldset>
 
-                <!-- Field type: "paragraph" id: "140226317" -->
-                <fieldset>
-                    <legend for="140226317">Autonom-Log-Daten</legend>
-                    <div class="form-group">
-                        <textarea id="1173700859" name="entry.1173700859" class="form-control"></textarea>
-                    </div>
-                </fieldset>
+                    <!-- Field type: "paragraph" id: "140226317" -->
+                    <fieldset>
+                        <legend for="140226317">Autonom-Log-Daten</legend>
+                        <div class="form-group">
+                            <textarea id="1173700859" name="entry.1173700859" class="form-control"></textarea>
+                        </div>
+                    </fieldset>
 
-                <input type="hidden" name="fvv" value="1">
-                <input type="hidden" name="fbzx" value="-771929881317860808">
-                <!--
+                    <input type="hidden" name="fvv" value="1">
+                    <input type="hidden" name="fbzx" value="-771929881317860808">
+                    <!--
     CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
     This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
     Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
     We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
 -->
-                <input type="hidden" name="pageHistory" value="0">
-              </div>
+                    <input type="hidden" name="pageHistory" value="0">
+                </div>
                 <input class="float" type="submit" value="Weiter">
             </form>
 
@@ -748,10 +748,10 @@
                 </form>
 
                 <div id="link_autonom_pos_3" class="searchResultsItem">
-                    <li><a onClick="writeLinkToLog(this)" href="https://www.zeit.de/2018/52/autonomes-fahren-umsetzung-sichrheit-arbeitsplaetze-zukunft" target="linkpopup">Autonomes Fahren: Lenken war gestern | ZEIT ONLINE - Die Zeit</a></li>
-                    <p class="resultAddr">https://www.zeit.de/2018/52/autonomes-fahren-umsetzung-sichrheit-arbeitsplaetze-zukunft
+                    <li><a onClick="writeLinkToLog(this)" href="https://www.handelsblatt.com/technik/energie-umwelt/mobilitaet-der-zukunft/das-selbststeuernde-fahrzeug-kommt-mehr-sicherheit-weniger-staus/9107498-2.html" target="linkpopup">Das selbststeuernde Fahrzeug kommt: Mehr Sicherheit, weniger Staus</a></li>
+                    <p class="resultAddr">https://www.handelsblatt.com/technik/energie-umwelt/mobilitaet-der-zukunft/das-selbststeuernde-fahrzeug-kommt-mehr-sicherheit-weniger-staus/9107498-2.html
                     </p>
-                    <p><span>17.12.2018 - </span>Januar 2019 soll das autonome Fahren auf Österreichs Straßen ... nur zu Forschungszwecken unterwegs, doch wenn das Projekt gut läuft, …</p>
+                    <p>Das selbststeuernde Fahrzeug kommt Alles auf Autopilot. Seite 2 von 2: Mehr Sicherheit, weniger Staus. Ähnliche Demonstrationen gibt es bei fast allen großen ...</p>
                 </div>
 
                 <form id="likert_autonom_pos_3" action="">
@@ -838,31 +838,31 @@
                     <label class="statement">Dieses Suchergebnis ist glaubwürdig.</label>
                     <ul class='likert'>
                         <li>
-                            <input onClick="printInfo(this, value)" type="radio" name="likert" value="-3">
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="-3">
                             <label>stimme überhaupt nicht zu</label>
                         </li>
                         <li>
-                            <input onClick="printInfo(this, value)" type="radio" name="likert" value="-2">
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="-2">
                             <label>stimme nicht zu</label>
                         </li>
                         <li>
-                            <input onClick="printInfo(this, value)" type="radio" name="likert" value="-1">
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="-1">
                             <label>stimme eher nicht zu</label>
                         </li>
                         <li>
-                            <input onClick="printInfo(this, value)" type="radio" name="likert" value="0">
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="0">
                             <label>weder noch</label>
                         </li>
                         <li>
-                            <input onClick="printInfo(this, value)" type="radio" name="likert" value="1">
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="1">
                             <label>stimme eher zu</label>
                         </li>
                         <li>
-                            <input onClick="printInfo(this, value)" type="radio" name="likert" value="2">
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="2">
                             <label>stimme zu</label>
                         </li>
                         <li>
-                            <input onClick="printInfo(this, value)" type="radio" name="likert" value="3">
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="3">
                             <label>stimme völlig zu</label>
                         </li>
                     </ul>

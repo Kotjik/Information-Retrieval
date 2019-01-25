@@ -406,7 +406,6 @@
     </style>
 
     <script>
-
         // IP-Adresse
         function getIP() {
             $.getJSON('http://ip.jsontest.com/?callback=?', function(data) {
@@ -435,6 +434,18 @@
 
         function writeLikertToLog(elem, value) {
             document.getElementById("946013436").innerHTML += elem.parentNode.parentNode.parentNode.id + ", " + value + ", " + getFormattedDate() + "\n";
+        }
+
+        // Google form pop up
+        function newUrl() {
+            window.location.href = '6meinung.html';
+        }
+
+        function createIframe() {
+            document.getElementById("googlepopup").innerHTML = "<iframe name='formpopup' id='my_iframe' ></iframe>";
+            document.getElementById('my_iframe').onload = function() {
+              newUrl();
+            }
         }
     </script>
 
@@ -468,42 +479,37 @@
         </div>
 
         <div class="searchResults">
-            <div style="display: none;">
-                <iframe name="formpopup">
+            <div id="googlepopup" style="display: none;">
 
-                </iframe>
             </div>
 
-                <form action="https://docs.google.com/forms/d/e/1FAIpQLSfHhXZthVYLB_1J_vzJEjpdL69gFXcXGakvhntKX0SsExl7dw/formResponse" target="formpopup" onsubmit="window.location.href = '6meinung.html';" id="bootstrapForm" method="POST">
-                  <div style="display: none;">
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSfHhXZthVYLB_1J_vzJEjpdL69gFXcXGakvhntKX0SsExl7dw/formResponse" target="formpopup" onsubmit="createIframe()" id="bootstrapForm" method="POST">
+                <div style="display: none;">
                     <fieldset>
                         <h2>4_Cannabis_Log<br><small></small></h2>
                     </fieldset>
-
 
                     <!-- Field type: "paragraph" id: "1051102496" -->
                     <fieldset>
                         <legend for="1051102496">Art</legend>
                         <div class="form-group">
-                            <textarea id="1566378084" name="entry.1566378084" class="form-control" >Cannabis-Negativ</textarea>
+                            <textarea id="1566378084" name="entry.1566378084" class="form-control">Cannabis-Negativ</textarea>
                         </div>
                     </fieldset>
-
 
                     <!-- Field type: "paragraph" id: "519799813" -->
                     <fieldset>
                         <legend for="519799813">IP-Adresse</legend>
                         <div class="form-group">
-                            <textarea id="623500627" name="entry.623500627" class="form-control" ></textarea>
+                            <textarea id="623500627" name="entry.623500627" class="form-control"></textarea>
                         </div>
                     </fieldset>
-
 
                     <!-- Field type: "paragraph" id: "1883718840" -->
                     <fieldset>
                         <legend for="1883718840">Cannabis-Log-Daten</legend>
                         <div class="form-group">
-                            <textarea id="946013436" name="entry.946013436" class="form-control" ></textarea>
+                            <textarea id="946013436" name="entry.946013436" class="form-control"></textarea>
                         </div>
                     </fieldset>
 
@@ -516,9 +522,9 @@
                         We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
                     -->
                     <input type="hidden" name="pageHistory" value="0">
-                  </div>
-                    <input class="float" type="submit" value="Weiter">
-                </form>
+                </div>
+                <input class="float" type="submit" value="Weiter">
+            </form>
 
             <!-- <div>
                 <a href="4cannabis_neg.html" class="btn btn-primary btn-lg float">
@@ -740,10 +746,10 @@
                 </form>
 
                 <div id="link_cannabis_pos_3" class="searchResultsItem">
-                    <li><a onClick="writeLinkToLog(this)" href="https://krautreporter.de/1554-bald-kann-in-deutschland-gras-angebaut-werden-ganz-legal" target="linkpopup">Bald kann in Deutschland Gras angebaut werden, ganz legal ...</a></li>
-                    <p class="resultAddr">https://krautreporter.de/1554-bald-kann-in-deutschland-gras-angebaut-werden-ganz-legal
+                    <li><a onClick="writeLinkToLog(this)" href="https://www.deutschlandfunkkultur.de/cannabis-konsum-jeder-widerspruch-verschwindet.976.de.html?dram:article_id=427444" target="linkpopup">Cannabis-Konsum - "Jeder Widerspruch verschwindet"</a></li>
+                    <p class="resultAddr">https://www.deutschlandfunkkultur.de/cannabis-konsum-jeder-widerspruch-verschwindet.976.de.html?dram:article_id=427444
                     </p>
-                    <p><span>07.07.2016 - </span>„Das Wirkspektrum von Cannabis ist relativ groß: Es kann anti-spastisch, gegen Übelkeit, appetitsteigernd und auch gegen Schmarz wirken “ …</p>
+                    <p><span>06.09.2018 - </span>Der weltweite Konsum von Cannabis ist auf einem Rekordhoch angelangt. ... THC gehört zu den wichtigsten und gut erforschten Wirkstoffen in ...</p>
                 </div>
 
                 <form id="likert_cannabis_pos_3" action="">
@@ -830,31 +836,31 @@
                     <label class="statement">Dieses Suchergebnis ist glaubwürdig.</label>
                     <ul class='likert'>
                         <li>
-                            <input onClick="printInfo(this, value)" type="radio" name="likert" value="-3">
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="-3">
                             <label>stimme überhaupt nicht zu</label>
                         </li>
                         <li>
-                            <input onClick="printInfo(this, value)" type="radio" name="likert" value="-2">
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="-2">
                             <label>stimme nicht zu</label>
                         </li>
                         <li>
-                            <input onClick="printInfo(this, value)" type="radio" name="likert" value="-1">
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="-1">
                             <label>stimme eher nicht zu</label>
                         </li>
                         <li>
-                            <input onClick="printInfo(this, value)" type="radio" name="likert" value="0">
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="0">
                             <label>weder noch</label>
                         </li>
                         <li>
-                            <input onClick="printInfo(this, value)" type="radio" name="likert" value="1">
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="1">
                             <label>stimme eher zu</label>
                         </li>
                         <li>
-                            <input onClick="printInfo(this, value)" type="radio" name="likert" value="2">
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="2">
                             <label>stimme zu</label>
                         </li>
                         <li>
-                            <input onClick="printInfo(this, value)" type="radio" name="likert" value="3">
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="3">
                             <label>stimme völlig zu</label>
                         </li>
                     </ul>
