@@ -350,8 +350,8 @@
             position: fixed;
             width: 245px;
             z-index: 1000;
-            top: 10%;
-            right: 10%;
+            top: 6.5%;
+            right: 20%;
             background-color: #bcbcbc;
             border-radius: 13px;
             /* (height of inner div) / 2 + padding */
@@ -373,8 +373,8 @@
             height: 45px;
             margin-top: 15px;
             z-index: 1000;
-            top: 10%;
-            right: 10%;
+            top: 6.5%;
+            right: 20%;
             background-color: #337ab7;
             color: #FFF;
             border-radius: 6px;
@@ -392,8 +392,7 @@
         /* ------------ Floating Article ----------- */
 
         .article {
-            float: right;
-            display: none;
+          float: right;
             border: double;
             position: fixed;
             width: 30%;
@@ -415,7 +414,7 @@
             $.getJSON('http://ip.jsontest.com/?callback=?', function(data) {
                 var ip_json = JSON.stringify(data, null, 2);
                 var ip_object = JSON.parse(ip_json);
-                document.getElementById("623500627").innerHTML = ip_object.ip;
+                document.getElementById("1613101467").innerHTML = ip_object.ip;
                 // console.log(ip_object.ip);
             });
         }
@@ -433,16 +432,16 @@
         }
 
         function writeLinkToLog(elem) {
-            document.getElementById("946013436").innerHTML += elem.parentNode.parentNode.id + ", " + getFormattedDate() + "\n";
+            document.getElementById("689994586").innerHTML += elem.parentNode.parentNode.id + ", " + getFormattedDate() + "\n";
         }
 
         function writeLikertToLog(elem, value) {
-            document.getElementById("946013436").innerHTML += elem.parentNode.parentNode.parentNode.id + ", " + value + ", " + getFormattedDate() + "\n";
+            document.getElementById("689994586").innerHTML += elem.parentNode.parentNode.parentNode.id + ", " + value + ", " + getFormattedDate() + "\n";
         }
 
-        // Google form pop up
+        // Google form popup
         function newUrl() {
-            window.location.href = '6meinung.html';
+            window.location.href = '4autonom_neg.html';
         }
 
         function createIframe() {
@@ -451,6 +450,7 @@
               newUrl();
             }
         }
+
     </script>
 
 </head>
@@ -465,7 +465,7 @@
             </div>
             <!--Searchbar-->
             <form class="searchForm">
-                <input class="searchBar" type="text" value="Cannabis Legalisierung">
+                <input class="searchBar" type="text" value="Veganismus">
                 </datalist>
             </form>
         </div>
@@ -486,52 +486,54 @@
             <div id="googlepopup" style="display: none;">
 
             </div>
-
-            <form action="https://docs.google.com/forms/d/e/1FAIpQLSfHhXZthVYLB_1J_vzJEjpdL69gFXcXGakvhntKX0SsExl7dw/formResponse" target="formpopup" onsubmit="createIframe()" id="bootstrapForm" method="POST">
+            <!-- onsubmit="window.location.href='4autonom_neg.html';" -->
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSdldSmqRz7IBPg7EtLuLa7Z6wjEJosJsuNUeW5YH7FSRo0U1A/formResponse" target="formpopup" onsubmit="createIframe()" id="bootstrapForm" method="POST">
                 <div style="display: none;">
+
                     <fieldset>
-                        <h2>4_Cannabis_Log<br><small></small></h2>
+                        <h2>2_Vegan_Log<br><small></small></h2>
                     </fieldset>
 
-                    <!-- Field type: "paragraph" id: "1051102496" -->
+                    <!-- Field type: "paragraph" id: "884261368" -->
                     <fieldset>
-                        <legend for="1051102496">Art</legend>
+                        <legend for="884261368">Art</legend>
                         <div class="form-group">
-                            <textarea id="1566378084" name="entry.1566378084" class="form-control">Cannabis-Negativ</textarea>
+                            <textarea id="1857790298" name="entry.1857790298" class="form-control">Vegan-Negativ</textarea>
                         </div>
                     </fieldset>
 
-                    <!-- Field type: "paragraph" id: "519799813" -->
+                    <!-- Field type: "paragraph" id: "1854590528" -->
                     <fieldset>
-                        <legend for="519799813">IP-Adresse</legend>
+                        <legend for="1854590528">IP-Adresse</legend>
                         <div class="form-group">
-                            <textarea id="623500627" name="entry.623500627" class="form-control"></textarea>
+                            <textarea id="1613101467" name="entry.1613101467" class="form-control"></textarea>
                         </div>
                     </fieldset>
 
-                    <!-- Field type: "paragraph" id: "1883718840" -->
+                    <!-- Field type: "paragraph" id: "1656936436" -->
                     <fieldset>
-                        <legend for="1883718840">Cannabis-Log-Daten</legend>
+                        <legend for="1656936436">Vegan-Log-Daten</legend>
                         <div class="form-group">
-                            <textarea id="946013436" name="entry.946013436" class="form-control"></textarea>
+                            <textarea id="689994586" name="entry.689994586" class="form-control"></textarea>
                         </div>
                     </fieldset>
 
                     <input type="hidden" name="fvv" value="1">
-                    <input type="hidden" name="fbzx" value="-2425181750550527076">
+                    <input type="hidden" name="fbzx" value="-3582002491806685340">
                     <!--
-                        CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
-                        This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
-                        Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
-                        We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
-                    -->
+                  CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
+                  This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
+                  Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
+                  We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
+              -->
                     <input type="hidden" name="pageHistory" value="0">
                 </div>
+
                 <input class="float" type="submit" value="Weiter">
             </form>
 
             <!-- <div>
-                <a href="4cannabis_neg.html" class="btn btn-primary btn-lg float">
+                <a href="4autonom_neg.html" class="btn btn-primary btn-lg float">
                     <b>Weiter</b>
                 </a>
             </div> -->
@@ -548,13 +550,13 @@
 
             <ul>
 
-                <div id="link_cannabis_neg_1" class="searchResultsItem">
-                    <li><a onClick="writeLinkToLog(this)" href="https://www.sueddeutsche.de/gesundheit/cannabis-konsum-und-seine-folgen-sucht-psychose-fuehrerscheinentzug-1.1778413" target="_blank">Cannabis: Der Konsum und seine Folgen - Gesundheit - Süddeutsche ...</a></li>
-                    <p class="resultAddr">https://www.sueddeutsche.de/gesundheit/cannabis-konsum-und-seine-folgen-sucht-psychose-fuehrerscheinentzug-1.1778413</p>
-                    <p><span>11.03.2018 - </span>Mehr als zwei Millionen Deutsche konsumieren gelegentlich oder regelmäßig Cannabis. Wie hoch ist ihr Risiko, davon abhängig zu werden?</p>
+                <div id="link_vegan_neg_1" class="searchResultsItem">
+                    <li><a onClick="writeLinkToLog(this)" href="https://www.faz.net/aktuell/rhein-main/im-gespraech-antje-gahl-wir-empfehlen-vegane-ernaehrung-nicht-12036801.html" target="linkpopup">Im Gespräch: Antje Gahl: „Wir empfehlen vegane Ernährung nicht“ - FAZ</a></li>
+                    <p class="resultAddr">https://www.faz.net/.../im-gespraech-antje-gahl-wir-empfehlen-vegane-ernaehrung-nicht...</p>
+                    <p><span>23.01.2013 - </span>In Frankfurt hat nun ein Laden für Veganer eröffnet. Im Gespräch äußert sich Antje Gahl von der Deutschen Gesellschaft für Ernährung über ...</p>
                 </div>
 
-                <form id="likert_cannabis_neg_1" action="">
+                <form id="likert_vegan_neg_1" action="">
                     <label class="statement">Dieses Suchergebnis ist glaubwürdig.</label>
                     <ul class='likert'>
                         <li>
@@ -588,13 +590,13 @@
                     </ul>
                 </form>
 
-                <div id="link_cannabis_pos_1" class="searchResultsItem">
-                    <li><a onClick="writeLinkToLog(this)" href="https://www.n-tv.de/wissen/Cannabis-Medizin-wird-zur-Kassenleistung-article19590447.html" target="_blank">Versorgung schwer kranker Menschen: Cannabis-Medizin wird zur ...</a></li>
-                    <p class="resultAddr">https://www.n-tv.de/wissen/Cannabis-Medizin-wird-zur-Kassenleistung-article19590447.html</p>
-                    <p><span>19.01.2017 - </span>Es lindert Schmerzen, wirkt krampflösend und macht heiter: Cannabis hat als Heilpflanze eine lange Tradition und wird auch von Ärzten ...</p>
+                <div id="link_vegan_pos_1" class="searchResultsItem">
+                    <li><a onClick="writeLinkToLog(this)" href="https://www.ugb.de/vollwert-ernaehrung/vegane-ernaehrung-gesundheit/" target="linkpopup">Vegane Ernährung: Ein Plus für die Gesundheit? - Veganer ... - UGB</a></li>
+                    <p class="resultAddr">https://www.ugb.de/vollwert-ernaehrung/vegane-ernaehrung-gesundheit/</p>
+                    <p>Vegane Ernährung - Veganismus: Eine gute Orientierung für die praktische ... Auch aus gesundheitlicher Sicht haben diese Ernährungsformen viele Vorteile ...</p>
                 </div>
 
-                <form id="likert_cannabis_pos_1" action="">
+                <form id="likert_vegan_pos_1" action="">
                     <label class="statement">Dieses Suchergebnis ist glaubwürdig.</label>
                     <ul class='likert'>
                         <li>
@@ -628,13 +630,13 @@
                     </ul>
                 </form>
 
-                <div id="link_cannabis_neg_2" class="searchResultsItem">
-                    <li><a onClick="writeLinkToLog(this)" href="https://www.ndr.de/ratgeber/gesundheit/Warum-Cannabis-fuer-Jugendliche-so-gefaehrlich-ist,cannabis352.html" target="_blank">Warum Cannabis für Jugendliche so gefährlich ist | NDR.de ...</a></li>
-                    <p class="resultAddr">https://www.ndr.de/ratgeber/gesundheit/Warum-Cannabis-fuer-Jugendliche-so-gefaehrlich-ist,cannabis352.html</p>
-                    <p><span>01.02.2016 - </span>Welche Folgen eine solche Freigabe - auch mit Altersbeschränkung - für Jugendliche hätte und warum Cannabis gerade für sie gefährlich ist, …</p>
+                <div id="link_vegan_neg_2" class="searchResultsItem">
+                    <li><a onClick="writeLinkToLog(this)" href="https://www.welt.de/gesundheit/article13472189/Veganer-bringen-ihr-Herz-in-Gefahr.html" target="linkpopup">Ernährung: Veganer bringen ihr Herz in Gefahr - WELT</a></li>
+                    <p class="resultAddr">https://www.welt.de/gesundheit/article13472189/Veganer-bringen-ihr-Herz-in-Gefahr.html</p>
+                    <p><span>07.07.2011 - </span>Wer in der Ernährung auf alle tierischen Produkte verzichtet, dem ... mit ihren vegetarischen Aktionen bloß von ihrer ungesunden Burgern ...</p>
                 </div>
 
-                <form id="likert_cannabis_neg_2" action="">
+                <form id="likert_vegan_neg_2" action="">
                     <label class="statement">Dieses Suchergebnis ist glaubwürdig.</label>
                     <ul class='likert'>
                         <li>
@@ -668,13 +670,13 @@
                     </ul>
                 </form>
 
-                <div id="link_cannabis_pos_2" class="searchResultsItem">
-                    <li><a onClick="writeLinkToLog(this)" href="https://www.huffingtonpost.de/2015/02/16/cannabis-gruende-kiffen_n_6691112.html" target="_blank">Cannabis: 19 wissenschaftliche Gründe, warum Sie mehr kiffen sollten ...</a></li>
-                    <p class="resultAddr">https://www.huffingtonpost.de/2015/02/16/cannabis-gruende-kiffen_n_6691112.html</p>
-                    <p>16.02.2015 - </span>Nie zuvor ist Deutschland einer Cannabis-Legalisierung näher gewesen als heute. Das mag auch daran liegen, dass es keine guten ...</p>
+                <div id="link_vegan_pos_2" class="searchResultsItem">
+                    <li><a onClick="writeLinkToLog(this)" href="http://up2vegan.com/?p=377" target="linkpopup">Vegan leben aus gesundheitlichen Gründen - go Vegan – for a better ...</a></li>
+                    <p class="resultAddr">http://up2vegan.com/?p=377</p>
+                    <p>Vegan leben aus gesundheitlichen Gründen. Viele Zivilisationskrankheiten werden auf den Konsum von Fleisch zurückgeführt. Rheuma, Diabetes, Übergewicht ...</p>
                 </div>
 
-                <form id="likert_cannabis_pos_2" action="">
+                <form id="likert_vegan_pos_2" action="">
                     <label class="statement">Dieses Suchergebnis ist glaubwürdig.</label>
                     <ul class='likert'>
                         <li>
@@ -708,14 +710,14 @@
                     </ul>
                 </form>
 
-                <div id="link_cannabis_neg_3" class="searchResultsItem">
-                    <li><a onClick="writeLinkToLog(this)" href="https://www.sueddeutsche.de/gesundheit/cannabis-abhaengigkeit-die-gefahr-ist-gross-die-droge-zu-unterschaetzen-1.1775128" target="_blank">Cannabis-Abhängigkeit "Die Gefahr ist groß, die Droge zu ...</a></li>
-                    <p class="resultAddr">https://www.sueddeutsche.de/gesundheit/cannabis-abhaengigkeit-die-gefahr-ist-gross-die-droge-zu-unterschaetzen-1.1775128
+                <div id="link_vegan_neg_3" class="searchResultsItem">
+                    <li><a onClick="writeLinkToLog(this)" href="https://graslutscher.de/vegan-total-ungesund-muss-zum-hot-dog-wettessen/" target="linkpopup">Sorry Jan, aber vegan ist doch total ungesund! Muss los, mein Hot ...</a></li>
+                    <p class="resultAddr">https://graslutscher.de/vegan-total-ungesund-muss-zum-hot-dog-wettessen/
                     </p>
-                    <p><span>11.03.2018 - </span>Vor allem Jugendliche rauchen Cannabis und setzen sich dem Risiko aus, abhängig zu werden. Suchtexperte Josef Strohbach erläutert, …</p>
+                    <p><span>15.01.2014 - </span>Ich will mich jetzt auch nicht als der Ernährungsguru schlechthin aufspielen oder behaupten, dass jeder Veganer automatisch nur gesunde ...</p>
                 </div>
 
-                <form id="likert_cannabis_neg_3" action="">
+                <form id="likert_vegan_neg_3" action="">
                     <label class="statement">Dieses Suchergebnis ist glaubwürdig.</label>
                     <ul class='likert'>
                         <li>
@@ -749,14 +751,14 @@
                     </ul>
                 </form>
 
-                <div id="link_cannabis_pos_3" class="searchResultsItem">
-                    <li><a onClick="writeLinkToLog(this)" href="https://www.deutschlandfunkkultur.de/cannabis-konsum-jeder-widerspruch-verschwindet.976.de.html?dram:article_id=427444" target="_blank">Cannabis-Konsum - "Jeder Widerspruch verschwindet"</a></li>
-                    <p class="resultAddr">https://www.deutschlandfunkkultur.de/cannabis-konsum-jeder-widerspruch-verschwindet.976.de.html?dram:article_id=427444
+                <div id="link_vegan_pos_3" class="searchResultsItem">
+                    <li><a onClick="writeLinkToLog(this)" href="https://www.vegan-werden.de/gesundheitliche-vorteile-veganismus.html" target="linkpopup">Gesundheitliche Vorteile der veganen Lebensweise | das vegane ...</a></li>
+                    <p class="resultAddr">https://www.vegan-werden.de/gesundheitliche-vorteile-veganismus.html
                     </p>
-                    <p><span>06.09.2018 - </span>Der weltweite Konsum von Cannabis ist auf einem Rekordhoch angelangt. ... THC gehört zu den wichtigsten und gut erforschten Wirkstoffen in ...</p>
+                    <p>Gesundheitliche Vorteile der veganen Lebensweise. Eine vegane Lebensweise schützt nicht nur Tiere und Umwelt, sondern auch die Gesundheit</p>
                 </div>
 
-                <form id="likert_cannabis_pos_3" action="">
+                <form id="likert_vegan_pos_3" action="">
                     <label class="statement">Dieses Suchergebnis ist glaubwürdig.</label>
                     <ul class='likert'>
                         <li>
@@ -790,13 +792,13 @@
                     </ul>
                 </form>
 
-                <div id="link_cannabis_neg_4" class="searchResultsItem">
-                    <li><a onClick="writeLinkToLog(this)" href="http://www.itsrap.de/allgemein/die-top-7-gruende-gegen-die-hanf-legalisierung-von-marlene-mortler/" target="_blank">Die Top 7 Gründe gegen die Hanf-Legalisierung von Marlene Mortler ...</a></li>
-                    <p class="resultAddr">http://www.itsrap.de/allgemein/die-top-7-gruende-gegen-die-hanf-legalisierung-von-marlene-mortler/</p>
-                    <p><span>08.10.2015 - </span>Ein Zusammenschnitt einiger Aussagen der u.a. Drogenbeauftragtin Marlene Mortler. Und sie hat wirklich hieb- und stichfeste Argumente ...</p>
+                <div id="link_vegan_neg_4" class="searchResultsItem">
+                    <li><a onClick="writeLinkToLog(this)" href="http://der-artgenosse.de/hey-veganer-eure-ersatzprodukte-sind-chemisch-und-ungesund/" target="linkpopup">Hey Veganer, eure Ersatzprodukte sind chemisch und ungesund ...</a></li>
+                    <p class="resultAddr">http://der-artgenosse.de/hey-veganer-eure-ersatzprodukte-sind-chemisch-und-ungesund/</p>
+                    <p>Vegane Fleischersatzprodukte aus dem Chemiebaukasten sind chemisch und voller Chemie! Außerdem: Chemie! PUR!</p>
                 </div>
 
-                <form id="likert_cannabis_neg_4" action="">
+                <form id="likert_vegan_neg_4" action="">
                     <label class="statement">Dieses Suchergebnis ist glaubwürdig.</label>
                     <ul class='likert'>
                         <li>
@@ -830,41 +832,41 @@
                     </ul>
                 </form>
 
-                <div id="link_cannabis_pos_4" class="searchResultsItem">
-                    <li><a onClick="writeLinkToLog(this)" href="https://www.huffingtonpost.de/2015/01/31/cannabis-gut-deutschland_n_6585256.html" target="_blank">So sehr würden deutsche Landwirte von der Cannabis-Legalisierung ...</a></li>
-                    <p class="resultAddr">https://www.huffingtonpost.de/2015/01/31/cannabis-gut-deutschland_n_6585256.html</p>
-                    <p><span>31.01.2015 - </span>Das Bundsagrarministerium hat sich indirekt für eine Freigabe von Cannabis ausgesprochen. Davon würden deutsche Bauern enorm ...</p>
+                <div id="link_vegan_pos_4" class="searchResultsItem">
+                    <li><a onClick="writeLinkToLog(this)" href="https://www.sueddeutsche.de/leben/vegane-ernaehrung-nicht-fisch-nicht-fleisch-1.1905127-2" target="linkpopup">Vegane Ernährung - Bessere Haut, bessere Figur ... - Süddeutsche.de</a></li>
+                    <p class="resultAddr">https://www.sueddeutsche.de/leben/vegane-ernaehrung-nicht-fisch-nicht-fleisch-1.1905127-2</p>
+                    <p><span>06.03.2014 - </span>Die vegane Ernährung gibt mir die Möglichkeit zurück, jederzeit so viel zu ... Vorteile bringt - was ist dann das größte Hindernis für eine vegane...</p>
                 </div>
 
-                <form id="likert_cannabis_pos_4" action="">
+                <form id="likert_vegan_pos_4" action="">
                     <label class="statement">Dieses Suchergebnis ist glaubwürdig.</label>
                     <ul class='likert'>
                         <li>
-                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="-3">
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="1">
                             <label>stimme überhaupt nicht zu</label>
                         </li>
                         <li>
-                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="-2">
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="2">
                             <label>stimme nicht zu</label>
                         </li>
                         <li>
-                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="-1">
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="3">
                             <label>stimme eher nicht zu</label>
                         </li>
                         <li>
-                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="0">
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="4">
                             <label>weder noch</label>
                         </li>
                         <li>
-                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="1">
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="5">
                             <label>stimme eher zu</label>
                         </li>
                         <li>
-                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="2">
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="6">
                             <label>stimme zu</label>
                         </li>
                         <li>
-                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="3">
+                            <input onClick="writeLikertToLog(this, value)" type="radio" name="likert" value="7">
                             <label>stimme völlig zu</label>
                         </li>
                     </ul>
